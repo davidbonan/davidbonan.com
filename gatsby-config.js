@@ -1,7 +1,7 @@
 /* eslint-disable quotes */
 module.exports = {
   siteMetadata: {
-    title: `My website`,
+    title: `David Bonan - Web developper`,
     googleVerification: `abcdefz`,
     disqus: `gatsby-typescript`
   },
@@ -81,6 +81,7 @@ module.exports = {
     // html file so the site works offline and is otherwise
     // resistant to bad networks. Works with almost any
     // site!
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-styled-components`
   ]
 };
