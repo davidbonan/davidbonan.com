@@ -141,7 +141,7 @@ $RECYCLE.BIN/
 public
 .cache
 dist
-!public/static
+!public/static/*
 
 ### Storybook ###
 storybook-static
