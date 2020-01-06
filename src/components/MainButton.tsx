@@ -25,13 +25,12 @@ const MyCV = styled.a`
   font-weight: 200;
   cursor: pointer;
   & :hover {
-    color: #333;
+    color: #d20068;
     text-decoration: none;
     background-color: #fff;
     font-weight: 400;
     padding: 12px 60px 12px 60px;  
     box-shadow: 0 0 1px 7px rgba(210,0,104,.15);
-
   }
 `;
 
