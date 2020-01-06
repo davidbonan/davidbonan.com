@@ -138,10 +138,10 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/osx,vim,node,windows,visualstudiocode
 
 ### Gatsby ###
-public
+public/*
+!public/static/
 .cache
 dist
-!public/static/*
 
 ### Storybook ###
 storybook-static
