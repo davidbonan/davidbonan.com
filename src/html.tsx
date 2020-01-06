@@ -23,7 +23,7 @@ export default (props: HtmlProps) => {
     <html lang="en">
       <head>
         {props.headComponents}
-        <title>David Bonan - Web developper</title>
+        <title>David Bonan - Web developer</title>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
