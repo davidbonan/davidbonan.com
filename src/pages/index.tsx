@@ -77,7 +77,7 @@ const IndexPage = (props: LayoutProps) => (
           <CardGridColumn>
             <Title icon color="grey" size="small">
               <Icon name="react" color="blue"></Icon>
-              React & React Native
+              React, React Native, Jest, Enzyme...
             </Title>
             <CardContent>
               Literally fan of React and more since the release of hooks and
@@ -149,11 +149,18 @@ const IndexPage = (props: LayoutProps) => (
           <Grid.Column width="10">
             <Title size="large" color="grey">
               Jewtrips
+              <a
+                href="https://jewtrips.com"
+                target="_blank"
+                style={{ marginLeft: 5, verticalAlign: "super" }}
+              >
+                <Icon name="external alternate" color="blue" size="tiny"></Icon>
+              </a>
             </Title>
             <MediumContent>
               A web and mobile application like yelp for jewish community.
             </MediumContent>
-            <Title size="small" color="blue">
+            <Title size="small" color="pink">
               Stack
             </Title>
             <SmallContent>
@@ -182,7 +189,7 @@ const IndexPage = (props: LayoutProps) => (
             <Label color="pink">Apollo</Label>
           </Grid.Column>
           <Grid.Column width="6">
-            <Image src="/static/projects/jewtrips.png" />
+            <Image src="/static/projects/jewtrips.png" circular />
           </Grid.Column>
         </Grid.Row>
       </Grid>
@@ -192,17 +199,24 @@ const IndexPage = (props: LayoutProps) => (
       <Grid stackable verticalAlign="middle" className="container">
         <Grid.Row>
           <Grid.Column width="6">
-            <Image src="/static/projects/vidal.png" />
+            <Image src="/static/projects/vidal.png" circular />
           </Grid.Column>
           <Grid.Column width="10">
             <Title size="large" color="grey">
               Vidal Mobile
+              <a
+                href="https://apps.apple.com/fr/app/vidal-mobile/id512171778"
+                target="_blank"
+                style={{ marginLeft: 5, verticalAlign: "super" }}
+              >
+                <Icon name="external alternate" color="blue" size="tiny"></Icon>
+              </a>
             </Title>
             <MediumContent>
               A mobile application for prescription assistance in France and
               Spain.
             </MediumContent>
-            <Title size="small" color="blue">
+            <Title size="small" color="pink">
               Stack
             </Title>
             <SmallContent>
@@ -212,6 +226,7 @@ const IndexPage = (props: LayoutProps) => (
             <Label color="blue">Nativescript</Label>
             <Label color="red">PHP</Label>
             <Label color="blue">Docker</Label>
+            <Label color="grey">REST</Label>
           </Grid.Column>
         </Grid.Row>
       </Grid>
@@ -223,12 +238,19 @@ const IndexPage = (props: LayoutProps) => (
           <Grid.Column width="10">
             <Title size="large" color="grey">
               Directskills
+              <a
+                href="https://directskills.com"
+                target="_blank"
+                style={{ marginLeft: 5, verticalAlign: "super" }}
+              >
+                <Icon name="external alternate" color="blue" size="tiny"></Icon>
+              </a>
             </Title>
             <MediumContent>
               An application for interim management and billing called "Baps".
               My mission is to migrate frontend from ColdFusion to ReactJS.
             </MediumContent>
-            <Title size="small" color="blue">
+            <Title size="small" color="pink">
               Stack
             </Title>
             <SmallContent>
@@ -242,6 +264,10 @@ const IndexPage = (props: LayoutProps) => (
             <Label color="yellow">Babel</Label>
             <Label color="purple">Gulp</Label>
             <Label color="grey">Monorepo</Label>
+            <Label color="green">Jest</Label>
+            <Label color="pink">Enzyme</Label>
+            <Label color="green">Mocha</Label>
+            <Label color="grey">REST</Label>
           </Grid.Column>
           <Grid.Column width="6">
             <Image src="/static/projects/dsk.png" />
@@ -254,19 +280,29 @@ const IndexPage = (props: LayoutProps) => (
       <Grid stackable verticalAlign="middle" className="container">
         <Grid.Row>
           <Grid.Column width="6">
-            <Image src="/static/projects/campus.png" />
+            <Image src="/static/projects/campus.png" circular />
           </Grid.Column>
           <Grid.Column width="10">
             <Title size="large" color="grey">
               Vidal Campus
+              <a
+                href="https://campus.vidal.fr"
+                target="_blank"
+                style={{ marginLeft: 5, verticalAlign: "super" }}
+              >
+                <Icon name="external alternate" color="blue" size="tiny"></Icon>
+              </a>
             </Title>
             <MediumContent>An eLearning medtech web application.</MediumContent>
-            <Title size="small" color="blue">
+            <Title size="small" color="pink">
               Stack
             </Title>
             <SmallContent>
               Vidal Campus is built in PHP with a docker environnement.
             </SmallContent>
+            <Label color="red">PHP</Label>
+            <Label color="yellow">jQuery</Label>
+            <Label color="blue">Docker</Label>
           </Grid.Column>
         </Grid.Row>
       </Grid>
@@ -278,20 +314,31 @@ const IndexPage = (props: LayoutProps) => (
           <Grid.Column width="10">
             <Title size="large" color="grey">
               Hotel Push Marketing
+              <a
+                href="https://about.hotelpushmarketing.com/"
+                target="_blank"
+                style={{ marginLeft: 5, verticalAlign: "super" }}
+              >
+                <Icon name="external alternate" color="blue" size="tiny"></Icon>
+              </a>
             </Title>
             <MediumContent>
               A marketing web solution for the hotel domain.
             </MediumContent>
-            <Title size="small" color="blue">
+            <Title size="small" color="pink">
               Stack
             </Title>
             <SmallContent>
               HPM is a script ready-to-use and backoffice built in PHP and React
               only for the editing message board.
             </SmallContent>
+            <Label color="blue">React</Label>
+            <Label color="yellow">Javascript</Label>
+            <Label color="red">PHP</Label>
+            <Label color="grey">REST</Label>
           </Grid.Column>
           <Grid.Column width="6">
-            <Image src="/static/projects/hpm.jpeg" />
+            <Image src="/static/projects/hpm.jpeg" circular />
           </Grid.Column>
         </Grid.Row>
       </Grid>
@@ -301,13 +348,23 @@ const IndexPage = (props: LayoutProps) => (
       <Grid stackable verticalAlign="middle" className="container">
         <Grid.Row>
           <Grid.Column width="6">
-            <Image src="/static/projects/croustipate.jpeg" />
+            <Image src="/static/projects/croustipate.jpeg" circular />
           </Grid.Column>
           <Grid.Column width="10">
             <Title size="large" color="grey">
               Croustipate
+              <a
+                href="https://croustipate.com"
+                target="_blank"
+                style={{ marginLeft: 5, verticalAlign: "super" }}
+              >
+                <Icon name="external alternate" color="blue" size="tiny"></Icon>
+              </a>
             </Title>
             <MediumContent>A brand website built in PHP.</MediumContent>
+            <Label color="red">PHP</Label>
+            <Label color="yellow">Javascript</Label>
+            <Label color="grey">REST</Label>
           </Grid.Column>
         </Grid.Row>
       </Grid>
