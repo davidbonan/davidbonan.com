@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+<key>items</key>
+<array>
+<dict>
+<key>assets</key>
+<array>
+<dict>
+<key>kind</key>
+<string>software-package</string>
+<key>url</key>
+<string>https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/ios/%40davidbonan/MyTaxis-b8f498a0-d443-4b98-90f5-6893e464a74e-archive.ipa</string>
+</dict>
+<dict>
+<key>kind</key>
+<string>display-image</string>
+<key>needs-shine</key>
+<true/>
+<key>url</key>
+<string>https://davidbonan.io/static/taxi-icon.png</string>
+</dict>
+<dict>
+<key>kind</key>
+<string>full-size-image</string>
+<key>needs-shine</key>
+<true/>
+<key>url</key>
+<string>https://davidbonan.io/static/taxi-icon.png</string>
+</dict>
+</array>
+<key>metadata</key>
+<dict>
+<key>bundle-identifier</key>
+<string>org.davidbonan.MyTaxis</string>
+<key>bundle-version</key>
+<string>1.0</string>
+<key>kind</key>
+<string>software</string>
+<key>title</key>
+<string>Jo' le taxi</string>
+<key>subtitle</key>
+<string>App</string>
+</dict>
+</dict>
+</array>
+</dict>
+</plist>
