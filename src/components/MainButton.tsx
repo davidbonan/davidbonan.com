@@ -29,18 +29,19 @@ const MyCV = styled.a`
     text-decoration: none;
     background-color: #fff;
     font-weight: 400;
-    padding: 12px 60px 12px 60px;  
-    box-shadow: 0 0 1px 7px rgba(210,0,104,.15);
+    padding: 12px 60px 12px 60px;
+    box-shadow: 0 0 1px 7px rgba(210, 0, 104, 0.15);
   }
 `;
 
 interface Props {
   children: any;
+  url: string;
 }
 
-function MainButton({ children }: Props) {
+function MainButton({ children, url }: Props) {
   return (
-    <MyCV href="/static/CV.png" target="_blank" >
+    <MyCV href={url} target="_blank">
       {children}
     </MyCV>
   );

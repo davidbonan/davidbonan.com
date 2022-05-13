@@ -46,7 +46,8 @@ const IndexPage = (props: LayoutProps) => (
           <span>{`Front-end web developer | react and react-native `}</span>
           <Icon name="react"></Icon>
         </MainSubtitle>
-        <MainButton>Curriculum Vitae</MainButton>
+        <MainButton url="/static/CV.png">Curriculum Vitae</MainButton>
+        <MainButton url="https://blog.davidbonan.io">Blog</MainButton>
       </Container>
     </Segment>
 
