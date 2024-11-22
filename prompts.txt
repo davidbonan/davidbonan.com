@@ -1,0 +1,8 @@
+Transforme un post Linkedin en article de blog dans le même format que @mastering-javascript-data-structures-beyond-arrays.mdx  , en anglais. 
+Crée un nouveau fichier .mdx dans le même dossier avec un nommage adéquat. Voici l'article : 
+
+
+
+
+Transforme un brief d'une expérience professionnel en un contenu de site web dans le même format que @directskills.mdx  , en anglais.
+Crée un nouveau fichier .mdx dans le même dossier avec un nommage adéquat. Voici le brief : 

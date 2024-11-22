@@ -1,0 +1,86 @@
+---
+date: '2024-11-15'
+title: 'Why Unit Tests Can Harm Your Codebase and Prevent Refactoring'
+category: 'Development'
+image: '/images/articles/unit-test.jpg'
+description: 'Learn why over-testing intermediate methods can lead to rigid code and how to make better decisions about what to test.'
+timeToRead: 4
+---
+
+As developers, we often hear that more tests equal better code quality. However, there's a hidden trap in this thinking that can lead to inflexible codebases and make refactoring nearly impossible. Let's explore why some unit tests can actually harm your codebase and how to avoid these pitfalls.
+
+## The Problem with Over-Testing
+
+The more you test intermediate methods—those that aren't entry points to your business logic—the more rigid your code becomes. But why is this happening?
+
+```javascript
+// Example of an intermediate method that shouldn't necessarily be tested
+const calculateSubTotal = (items) => {
+  return items.reduce((sum, item) => sum + item.price, 0)
+}
+
+// This is the actual business logic entry point that should be tested
+const calculateFinalPrice = (items, discountCode) => {
+  const subTotal = calculateSubTotal(items)
+  const discount = applyDiscount(subTotal, discountCode)
+  return subTotal - discount
+}
+```
+
+When you write tests for `calculateSubTotal`, you're essentially cementing its implementation. Any future refactoring that might want to combine or split this logic differently would require changing the tests, even if the final behavior remains the same.
+
+## When Should You Write Tests?
+
+Before writing a test, ask yourself these crucial questions:
+
+1. **Is this method already covered by higher-level tests?**
+
+   - If your entry point method already tests this functionality, additional tests might be redundant
+
+2. **Is this method a crucial entry point?**
+
+   - Focus on testing the public API of your modules
+
+3. **Is this part of your application's contract?**
+   - Test the behaviors that other parts of your system depend on
+
+## Better Testing Strategies
+
+Instead of testing everything, focus on:
+
+```javascript
+// DO test public API endpoints
+describe('OrderService', () => {
+  it('should calculate final price with discount', () => {
+    const items = [{ price: 100 }, { price: 200 }]
+    const result = orderService.calculateFinalPrice(items, 'DISCOUNT10')
+    expect(result).toBe(270) // Tests the final business outcome
+  })
+})
+
+// DON'T test private implementation details
+// avoid testing calculateSubTotal() directly
+```
+
+## The Impact on Refactoring
+
+When you over-test, refactoring becomes challenging because:
+
+1. Every internal change requires updating multiple tests
+2. Test maintenance becomes a significant overhead
+3. Developers become reluctant to make necessary changes
+
+## Best Practices for Sustainable Testing
+
+To maintain a healthy codebase:
+
+- Test behaviors, not implementations
+- Focus on entry points and public APIs
+- Keep internal implementations flexible
+- Write tests that support refactoring, not prevent it
+
+## Conclusion
+
+While testing is crucial for maintaining code quality, over-testing can be just as harmful as under-testing. By focusing on testing the right things—entry points, public APIs, and crucial business logic—you can maintain a robust test suite that verifies your application's behavior while still allowing for future refactoring and improvements.
+
+Remember: The goal of testing is to ensure your application works correctly, not to document every internal implementation detail. Make your tests work for you, not against you.

@@ -1,0 +1,60 @@
+---
+date: '2023-03-24'
+title: 'Fleetlify'
+subtitle: 'Medical Transport Fleet Management Software'
+tags: ['Developer Senior Full Stack']
+thumbnail: '/images/fleetlify.png'
+coverImage: '/images/fleetlify.png'
+projectURL: 'https://app.fleetlify.com/'
+description: 'As the founder and full stack developer, I was responsible for the development of the Fleetlify application, a medical transport fleet management software.'
+client:
+  name: 'Fleetlify'
+  description: 'A software solution for managing medical transport fleets, optimizing route assignments, and handling billing and CRM functionalities.'
+  industry: 'Medical Transport'
+  companySize: '1'
+  headquarters: 'Paris, France'
+projectDuration: 'March 2020 - Present'
+---
+
+## Mission Summary
+
+### 1. Creation of a Ride Assignment Algorithm
+
+- **Objective:** Solve the planning issues for pre-booked reservations for a fleet of medical taxis, considering round trips.
+- **Achievements:** Designed an algorithm that accounts for real-time traffic, data cost optimization, relevance of distances (distance to the ride and the ride itself), and delay tolerances to manage return trip adjustments. The algorithm adapts to real-time changes to optimize route efficiency.
+- **Challenges:**
+  - Order of assignments to ensure optimal relevance
+  - Costs of real-time traffic API
+  - System robustness for large schedules
+
+### 2. Implementation of Caching Systems for Traffic Management
+
+- **Objective:** Optimize traffic data management to reduce response times and costs while maintaining accurate forecasts.
+- **Achievements:** Created two levels of cache:
+  - A long-term cache providing imprecise data for large-scale predictions.
+  - A short-term cache with more precise data for real-time ride management.
+- **Challenges:** Response times of caching systems
+
+### 3. Creation of a CRM for Fleet Management
+
+- **Objective:** Enable fleet managers to supervise taxis, make manual adjustments to ride assignments, and manage billing.
+- **Achievements:** Developed a comprehensive CRM including a transport voucher management tool, an automated billing system, and manual correction tools to improve flexibility in route management.
+- **Challenges:** Fine-tuned UX with client operators for better understanding of the application and its capabilities
+
+### 4. Integration of an LLM Model for Data Entry Simplification
+
+- **Objective:** Automate and simplify repetitive data entry for rides, patients/clients, and transport vouchers.
+- **Achievements:** Implemented a language model (LLM) to provide automatic completions and reduce the time required for managing reservations and client records.
+- **Challenges:** Prompt engineering
+
+### 5. Cloud Infrastructure with AWS
+
+- **Objective:** Design a scalable and high-performance infrastructure to host the application.
+- **Achievements:** Deployed the infrastructure on AWS EC2 for hosting services, with MongoDB as the main database and DynamoDB for cache data management.
+- **Challenges:** Need for robust infrastructure for a critical application
+
+### 6. Automated Tests for the Assignment Algorithm
+
+- **Objective:** Ensure the robustness and reliability of the algorithm in various scenarios.
+- **Achievements:** Implemented automated tests to evaluate the algorithm's performance under different traffic and scheduling constraints and configurations.
+- **Challenges:** Ensuring comprehensive test coverage and reliability

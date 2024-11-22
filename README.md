@@ -1,97 +1,103 @@
-# Gatsby 2.0 starter
+# Jane - Next.js
 
-[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
-[![Build Status](https://travis-ci.org/fabien0102/gatsby-starter.svg?branch=master)](https://travis-ci.org/fabien0102/gatsby-starter)
-[![Build status](https://ci.appveyor.com/api/projects/status/k06pajqcm23lay1s/branch/master?svg=true)](https://ci.appveyor.com/project/fabien0102/gatsby-starter/branch/master)
-[![Code Climate](https://codeclimate.com/github/fabien0102/gatsby-starter/badges/gpa.svg)](https://codeclimate.com/github/fabien0102/gatsby-starter)
-[![Test Coverage](https://codeclimate.com/github/fabien0102/gatsby-starter/badges/coverage.svg)](https://codeclimate.com/github/fabien0102/gatsby-starter/coverage)
+This is a personal portfolio template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
 
-Demo: <https://fabien0102-gatsby-starter.netlify.com/>
+This template is built with **Next.js v13.5** and **Tailwind CSS v3**, leveraging the latest [App Router](https://nextjs.org/docs/app) and server component functionalities. It's Powered by [MDX](https://mdxjs.com/), with [Contentlayer](https://www.contentlayer.dev/) integration.
 
-Storybook: <https://fabien0102-gatsby-starter.netlify.com/docs/>
+## Getting Started
 
-Gatsby 2.0 starter for generate awesome static website working with a nice env development.
-
-## Warning
-
-This starter is currently in wip (see progression to #What's inside session).
-
-## Getting started
-
-Install this starter (assuming Gatsby is installed) by running from your CLI:
+First, install the dependencies. Navigate to the project directory in your terminal and run:
 
 ```bash
-$ gatsby new my-website https://github.com/fabien0102/gatsby-starter
+npm install
+# or
+yarn install  # if you have Yarn installed
 ```
 
-Run `npm start` (or press `F5` if you are on VSCode) to hot-serve your website on <http://localhost:8000>.
+This will install all required dependencies and place them in a folder called `node_modules` in the root directory.
 
-Run `npm run build` to create static site ready to host (`/public`)
+Once the dependencies are installed, you can run the development server:
 
-## What's inside?
+```bash
+npm run dev
+# or
+yarn dev
+```
 
--   [ ] Gatsby 2.0 (alpha)
-    -   [x] sharp
-    -   [x] offline support
-    -   [ ] google analytics
-    -   [x] manifest
-    -   [x] typescript
-    -   [x] blog in markdown
--   [x] Best practices tools
-    -   [x] [Jest](https://facebook.github.io/jest/) / [Enzyme](http://airbnb.io/enzyme/)
-    -   [x] [Storybook](https://storybooks.js.org/)
-    -   [x] [Typescript](https://www.typescriptlang.org/) / [tslint](https://palantir.github.io/tslint/)
-    -   [x] [xo linter](https://github.com/sindresorhus/xo)
-    -   [x] [Remark-lint](https://github.com/wooorm/remark-lint)
-    -   [x] [Husky](https://github.com/typicode/husky) & [lint-staged](https://github.com/okonet/lint-staged) for autofix each commit
-    -   [x] Travis/AppVeyor config (unix-osx-windows CI)
-    -   [x] Code climate config
--   [x] SEO
-    -   [x] [Helmet](https://github.com/nfl/react-helmet)
--   [x] [Semantic-ui](http://react.semantic-ui.com) for styling
--   [x] Lazyboy tools
-    -   [x] [plop](https://github.com/amwmedia/plop) templates -> `npm run generate`
+Open [http://localhost:3000](http://localhost:3000) with your browser to view the website.
 
-## Files structure
+## File Structure
 
-     .
-     ├── data                          // website data (included into graphQL)
-     │   ├── author.json               // list of blog authors
-     │   ├── avatars                   // authors avatars
-     │   └── blog                      // all blog data (posts, images)
-     ├── gatsby-config.js              // gatsby configuration
-     ├── gatsby-node.js                // gatsby node hooks
-     ├── generators                    // generators (`npm run generate`)
-     │   ├── blog-post-generator.js    // `blog post` generator
-     │   ├── component-generator.js    // `component` generator
-     │   ├── page-generator.js         // `page` generator
-     │   ├── plopfile.js               // generators entry
-     │   ├── templates                 // all templates (handlebar notation)
-     │   └── utils.js                  // utils scripts for generators
-     ├── package.json
-     ├── public                        // output folder (in .gitignore)
-     ├── README.md                     // this file
-     ├── src                           // sources
-     │   ├── components                // all react components
-     │   ├── css                       // styles
-     │   ├── declarations.d.ts         // declarations for no typescript modules/files
-     │   ├── graphql-types.d.ts        // graphql types (`npm run graphql-types`)
-     │   ├── html.tsx                  // main html (required)
-     │   ├── layouts                   // layouts
-     │   │   └── default.tsx           // default layout (required)
-     │   ├── pages                     // all pages
-     │   └── templates                 // all templates (used for procedural page creation, see `gatsby-node.js`)
-     ├── tools                         // miscs tools for dev
-     │   └── update-post-date.js       // update post date hook
-     ├── tsconfig.json                 // typescript configuration
-     ├── tslint.json                   // tslint configuration
-     └── package-lock.json             // npm lock file
+All of the code for this template is located in the `/src` folder. The folder contains the following:
 
-## Plop generators - `npm run generate`
+- `components` - Directory of reusable components
+- `app` - Contains the site route components and layouts
+- `content` - Contains all the `mdx` content files for the blog and case studies powered by `contentlayer`.
+- `images` - Directory of images used across the site, including logos
+- `styles` - Contains the entry point CSS file for Tailwind CSS and additional typography styles for Prism
+- `lib` - Contains custom scripts for getting articles and case studies.
 
-To avoid any boring copy/paste, this starter-kit have many generators to permit
-simple bootstrap of current file pattern (eg. components/pages/blog posts). e.g. to add a new blog post first add the authors to data/authors.json and add authors' images to the data/avatars folder. Next execute 'npm run generate' and select 'Blog post'. Follow the prompts for a new post. Each blog post requires an image be added to the /data/blog/<your new post> folder prior to running 'gatsby develop'.
+Note that in order to more concisely import images and components, we defined a module path alias to the `/src` directory inside the `jsconfig.json` file at the root of our project. To learn more about module aliases you can check out [Vercel's documentation](https://nextjs.org/docs/advanced-features/module-path-aliases) on the subject.
 
-You can add/delete/modify any generators into `/generators` folder.
+## MDX Content
 
-Be lazy and have fun!
+All of the content for the site is stored in mdx files in the `src/content` directory. Jane uses [contentlayer](https://www.contentlayer.dev/docs), to access, model and transform this content into data throughout the blog and work sections.
+
+In order to model your data correctly, `contentlayer` needs to know the shape of your content — your content schema. This content schema is stored and defined in the root of the project in the `contentlayer.config.js` file.
+
+To add a blog post or case study, simply add the data to its corresponding directory in the `src/content` directory. Make sure that the data structure is the same as the content schema defined in the `contentlayer.config.js` file for that corresponding model.
+
+### MDX Rendering with MdxContent
+
+The template provides a specialized component called `MdxContent` which renders your MDX content with the help of the `useMDXComponent` hook from `next-contentlayer/hooks`. This component is situated in the `src/components/mdx` directory.
+
+The MdxContent component defines Image and Link mdx components that are wrapper components for the Next.js Link and Image components respectively.
+
+Both of these helper components, along with any future ones you might add, are also housed in the `src/components/mdx` directory. This modular approach allows you to easily extend or customize the behavior of MDX elements as your project grows.
+
+## Tailwind CSS
+
+This theme uses the latest version of Tailwind CSS: v3.3.
+
+Tailwind CSS and its dependencies were installed via npm as recommended by the official [Tailwind installation docs for next.js](https://tailwindcss.com/docs/guides/nextjs). If you are not familiar with the Tailwind CSS framework, I would recommend checking out the [Tailwind documentation](https://tailwindcss.com/docs).
+
+You can find the `tailwind.config.js` and `postcss.config.js` files at the root of the directory. The entry point CSS file is located at `src/styles/globals.css`. This file contains the `@tailwind` directives.
+
+There is an additonal `prism.css` stylesheet for `prism.js` codeblock syntax styles used in the blog posts.
+
+We've tried to minimize any custom CSS and only rely on Tailwind's utility classes and a few additional classes defined within the `tailwind.config.js` file. This template additionally uses 3 official Tailwind CSS plugins (`@tailwindcss/forms`, `@tailwindcss/aspect-ratio`, and `@tailwindcss/typography`).
+
+## Font
+
+This template uses the [Inter](https://fonts.google.com/specimen/Inter), [Lexend](https://fonts.google.com/specimen/Lexend), and the [Gochi Hand](https://fonts.google.com/specimen/Gochi+Hand) Google Font families. The template uses the latest `next/font` to automatically optimize the fonts and remove external network requests for improved privacy and performance.
+
+## Icons
+
+The icons used for this theme are part of the [Hero Icons](https://heroicons.com/) set that is free to use and published under the [MIT License](https://github.com/tailwindlabs/heroicons/blob/master/LICENSE).
+
+Some of the examples in Jane use [Nucleo App](https://nucleoapp.com/premium-icons) icons which we have acquired a license for. You are free to use the Nucleo icons included in this template on your projects, but if you are interested in using the rest of their premium icons you can buy a license on their [website](https://nucleoapp.com/).
+
+## Images
+
+All of the images used in the template are free to use and are either from [Unsplash](https://unsplash.com/), [Pexels](https://www.pexels.com/), or custom-made.
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) by the creators of Next.js.
+
+Check out their [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## License
+
+This site template is a commercial product and is licensed under the [Tailwind Awesome license](https://www.tailwindawesome.com/license).
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+## Additional Help
+
+If you need additional help setting up the template or have any questions, feel free to contact us at <rodrigo@tailwindawesome.com>.
