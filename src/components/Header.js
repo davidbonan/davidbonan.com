@@ -147,9 +147,11 @@ export function Header() {
             <Button className="hidden md:block" variant="secondary" href="mailto:contact@davidbonan.com">
               Contact Me
             </Button>
+            {links.length > 0 ? (
             <div className="ml-4 md:hidden">
               <MobileNav />
             </div>
+            ) : null}
           </div>
         </nav>
       </Container>
