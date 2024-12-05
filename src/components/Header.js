@@ -144,7 +144,7 @@ export function Header() {
             <Button variant="primary" href="/blog">
               Blog
             </Button>
-            <Button variant="secondary" href="mailto:contact@davidbonan.com">
+            <Button className="hidden md:block" variant="secondary" href="mailto:contact@davidbonan.com">
               Contact Me
             </Button>
             <div className="ml-4 md:hidden">
