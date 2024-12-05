@@ -7,7 +7,7 @@ description: 'Learn how to transform inefficient nested loops into performant so
 timeToRead: 4
 ---
 
-As developers, we often encounter situations where we need to find relationships between elements in different arrays. The immediate solution that comes to mind is usually nested loops, leading to O(n²) complexity. Let's explore a real-world example and see how we can dramatically improve performance using JavaScript Maps.
+As developers, we often encounter situations where we need to find relationships between elements in different arrays. The immediate solution that comes to mind is usually nested loops, leading to O(n²) complexity. However, beyond poor performance, there’s a more serious problem: in high-traffic environments, an O(n²) algorithm can block the event loop and freeze your server. Let's explore a real-world example and see how we can dramatically improve performance using JavaScript Maps.
 
 ## The N² Problem
 
@@ -39,6 +39,15 @@ const getUserOrders = () => {
 ```
 
 With this approach, for each user, we're scanning through the entire orders array. If we have 1,000 users and 1,000 orders, we're performing 1,000,000 comparisons!
+
+## The Bigger Problem: Blocking the Event Loop
+
+JavaScript runs on a single thread, meaning the event loop is responsible for processing all tasks, from handling HTTP requests to database queries. When a computationally expensive operation like an O(n²) loop takes too long, it blocks the event loop, causing the server to stop responding to incoming requests. This can result in:
+- Delayed Responses: Other users experience increased latency.
+- Server Freezes: Requests can time out, degrading the user experience.
+- Wasted Resources: In a microservices architecture, a frozen service may trigger cascading failures.
+
+This is why solving O(n²) complexity isn’t just about optimizing performance—it’s about keeping your application responsive and stable.
 
 ## The Map Solution
 
@@ -126,6 +135,7 @@ Remember:
 
 - Nested loops are often a red flag for performance issues
 - Maps provide O(1) lookup time
+- O(n²) algorithms can block the event loop and freeze the server
 - The extra memory usage is usually worth the performance gain
 - Always measure performance with realistic data sizes
 
