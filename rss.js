@@ -31,7 +31,6 @@ export default async function generateRssFeed() {
       link: `${site_url}/blog/${post.slug}`,
       description: post.description,
       date: new Date(post.date),
-      content: post.body.raw,
       author: [
         {
           name: 'David Bonan',
