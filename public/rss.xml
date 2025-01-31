@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>David Bonan | Blog</title>
         <link>https://davidbonan.io</link>
         <description>David Bonan - Senior developer, entrepreneur, and general technology enthusiast</description>
-        <lastBuildDate>Fri, 31 Jan 2025 14:40:38 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 31 Jan 2025 14:50:36 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for developer</generator>
         <image>
@@ -19,6 +19,203 @@
             <guid>https://davidbonan.io/blog/boosting-performance-with-web-workers</guid>
             <pubDate>Mon, 25 Nov 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Learn how to leverage Web Workers to run CPU-intensive tasks without blocking the main thread in JavaScript applications.]]></description>
+            <content:encoded><![CDATA[
+As web applications become more complex, running heavy computations on the main thread can lead to unresponsive user interfaces and poor user experience. Web Workers provide a powerful solution by allowing us to run JavaScript in background threads. Let's explore how to implement them effectively.
+
+## The Single-Thread Problem
+
+JavaScript is single-threaded by nature. Consider this CPU-intensive task:
+
+```javascript
+function calculatePrimes(max) {
+  const primes = []
+  for (let i = 2; i <= max; i++) {
+    let isPrime = true
+    for (let j = 2; j <= Math.sqrt(i); j++) {
+      if (i % j === 0) {
+        isPrime = false
+        break
+      }
+    }
+    if (isPrime) primes.push(i)
+  }
+  return primes
+}
+
+// This will freeze the UI
+const result = calculatePrimes(1000000)
+```
+
+Running this directly in your application would block the main thread, freezing the UI until completion.
+
+## Enter Web Workers
+
+Here's how to move this computation to a Web Worker:
+
+```javascript
+// worker.js
+self.onmessage = function (e) {
+  const max = e.data
+  const primes = calculatePrimes(max)
+  self.postMessage(primes)
+}
+
+function calculatePrimes(max) {
+  // Same implementation as above
+}
+```
+
+```javascript
+// main.js
+const worker = new Worker('worker.js')
+
+worker.onmessage = function (e) {
+  console.log('Calculated primes:', e.data)
+}
+
+// This won't block the UI
+worker.postMessage(1000000)
+```
+
+## Advanced Worker Patterns
+
+### 1. Worker Pools
+
+For multiple parallel tasks:
+
+```typescript
+class WorkerPool {
+  private workers: Worker[] = []
+  private queue: Function[] = []
+  private activeWorkers = 0
+
+  constructor(private maxWorkers: number) {
+    this.initialize()
+  }
+
+  private initialize() {
+    for (let i = 0; i < this.maxWorkers; i++) {
+      this.workers.push(new Worker('worker.js'))
+    }
+  }
+
+  async execute(data: any): Promise<any> {
+    return new Promise((resolve) => {
+      const worker = this.getAvailableWorker()
+      if (worker) {
+        this.runTask(worker, data, resolve)
+      } else {
+        this.queue.push(() => this.execute(data).then(resolve))
+      }
+    })
+  }
+
+  private getAvailableWorker() {
+    return this.activeWorkers < this.maxWorkers
+      ? this.workers[this.activeWorkers++]
+      : null
+  }
+
+  private runTask(worker: Worker, data: any, resolve: Function) {
+    worker.onmessage = (e) => {
+      this.activeWorkers--
+      resolve(e.data)
+      if (this.queue.length > 0) {
+        const nextTask = this.queue.shift()
+        nextTask?.()
+      }
+    }
+    worker.postMessage(data)
+  }
+}
+```
+
+### 2. Transferable Objects
+
+For better performance with large data:
+
+```javascript
+// Create a large array buffer
+const buffer = new ArrayBuffer(100000000)
+
+// Transfer ownership to worker (faster than copying)
+worker.postMessage(buffer, [buffer])
+
+// The buffer is no longer usable in the main thread
+console.log(buffer.byteLength) // 0
+```
+
+## Best Practices
+
+1. **Choose Tasks Wisely**
+
+```javascript
+// Good candidate for Web Worker
+const heavyTask = {
+  compute: () => {
+    // CPU intensive calculations
+    // No DOM manipulation
+    // No shared state dependencies
+  },
+}
+
+// Bad candidate for Web Worker
+const lightTask = {
+  compute: () => {
+    document.querySelector('#result').innerHTML = 'Done'
+    // DOM manipulation not allowed in workers
+  },
+}
+```
+
+2. **Error Handling**
+
+```javascript
+worker.onerror = function (error) {
+  console.error('Worker error:', error)
+  // Gracefully degrade or restart worker
+}
+
+worker.onmessageerror = function (error) {
+  console.error('Message error:', error)
+  // Handle message serialization errors
+}
+```
+
+## Performance Gains
+
+Let's measure the impact:
+
+```javascript
+// Without Worker
+console.time('Main Thread')
+const result = calculatePrimes(1000000)
+console.timeEnd('Main Thread')
+// Main Thread: 1200ms (UI blocked)
+
+// With Worker
+console.time('Worker')
+const worker = new Worker('worker.js')
+worker.onmessage = (e) => {
+  console.timeEnd('Worker')
+  // Worker: 1250ms (UI responsive)
+}
+worker.postMessage(1000000)
+```
+
+## Conclusion
+
+Web Workers are a powerful tool for maintaining responsive applications while performing heavy computations. Key takeaways:
+
+- Use Workers for CPU-intensive tasks
+- Implement worker pools for parallel processing
+- Use transferable objects for large data
+- Handle errors gracefully
+- Measure performance gains
+
+Remember that Workers come with their own limitations and overhead. Choose them when the benefits of non-blocking execution outweigh the cost of message passing and thread management.
+]]></content:encoded>
+            <author>contact@davidbonan.com (David Bonan)</author>
         </item>
         <item>
             <title><![CDATA[Building a Mobile App with AI: A Journey from Concept to App Store]]></title>
@@ -26,6 +223,99 @@
             <guid>https://davidbonan.io/blog/building-mobile-app-with-ai-a-journey</guid>
             <pubDate>Fri, 31 Jan 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[A real-world experience of using AI tools like Cursor and Claude to build a mobile application from scratch, highlighting both benefits and challenges.]]></description>
+            <content:encoded><![CDATA[
+As artificial intelligence tools become increasingly sophisticated, developers are exploring new ways to leverage them in their workflow. I recently embarked on an interesting experiment: building a mobile application from scratch using AI assistance, specifically Cursor with Claude-3.5 Sonnet. Here's what I learned during this journey that led to a published app on the App Store.
+
+## Phase 1: Rapid Prototyping with AI
+
+The initial development phase was surprisingly smooth. After a three-year break from React Native, I needed help getting back into the ecosystem.
+
+### Project Setup and Initial Development
+Using Cursor's Composer feature, I started by providing a brief description of my desired application. The AI immediately generated a complete Expo project structure, handling all the necessary configurations and dependencies. This was particularly helpful as it eliminated the need to remember all the setup steps that might have changed during my three-year hiatus from React Native development.
+
+### Early Wins with AI
+The initial iterations were remarkably successful. The AI-generated code compiled without errors, which was impressive considering the complexity of mobile development. Each feature request was met with coherent, working implementations. The AI showed a good understanding of React Native patterns and Expo's capabilities.
+
+### Rapid UI/UX Iteration
+Perhaps the most surprising aspect was the speed of UI/UX iteration. Instead of spending hours in design tools like Figma, I could describe changes conversationally to the AI and see them implemented immediately. This phase took only 2 hours, during which I wrote zero code manually, focusing instead on refining the user experience through rapid iteration.
+
+## Phase 2: The Reality Check
+
+As the project grew, several challenges emerged that revealed the limitations of AI-assisted development.
+
+### Code Quality Deterioration
+The AI's inability to effectively refactor existing code became increasingly problematic. When pivoting features or making significant changes, the AI would often add new code without properly removing or updating the old implementation. This led to:
+
+- Accumulation of dead code across multiple components
+- Increasingly complex and intertwined component structures
+- Reduced clarity in the codebase, making it harder for the AI to understand the context
+- Duplicate functionality implemented in slightly different ways
+
+### Architectural Challenges
+The lack of proper architecture became evident as the application grew:
+
+1. **Component Bloat**: Components regularly exceeded 500 lines, mixing concerns and making maintenance difficult
+2. **State Management Chaos**: Business logic was scattered across different layers without clear organization
+3. **Poor Separation of Concerns**: Features were tightly coupled, making changes risky
+4. **Navigation Complexity**: Screen flows became convoluted with multiple navigation patterns
+5. **Performance Issues**: Unnecessary re-renders and inefficient data handling
+
+## The Cleanup Phase
+
+The refactoring phase took significantly longer than the initial development - a full 5 hours of intensive code cleanup. This phase involved:
+
+### Code Restructuring
+- Breaking down large components into smaller, focused ones
+- Implementing proper state management patterns
+- Establishing clear boundaries between business logic and UI
+- Creating reusable components and hooks
+- Standardizing navigation patterns
+
+### Technical Debt Resolution
+- Identifying and removing unused code
+- Fixing bugs introduced during multiple iterations
+- Implementing proper error handling
+- Optimizing performance bottlenecks
+- Documenting key architectural decisions
+
+### Architecture Improvements
+- Introducing proper dependency injection
+- Implementing clean architecture principles
+- Setting up proper testing infrastructure
+- Creating clear data flow patterns
+- Establishing coding standards and best practices
+
+## Key Learnings
+
+### AI Strengths
+1. **Rapid Prototyping**: Unmatched speed in getting from concept to working prototype
+2. **Feature Exploration**: Excellent for testing different approaches quickly
+3. **Boilerplate Generation**: Efficient at creating standard patterns and structures
+4. **Documentation**: Good at generating initial documentation and comments
+5. **Learning Tool**: Helpful for understanding new frameworks or patterns
+
+### AI Limitations
+1. **Code Maintenance**: Struggles with large-scale refactoring
+2. **Architecture**: May not follow best practices for larger applications
+3. **Technical Debt**: Can create maintenance challenges if not properly managed
+4. **Context Understanding**: Difficulty maintaining consistency across multiple sessions
+5. **Performance Optimization**: May not implement the most efficient solutions
+
+## Conclusion
+
+AI tools like Cursor and Claude are incredibly powerful for prototyping and initial development, potentially replacing traditional design tools like Figma for quick proof-of-concepts. The experience resulted in a published app ([CESU Planning on the App Store](https://apps.apple.com/gb/app/cesu-planning/id6739985333?uo=2)), demonstrating that AI-assisted development is viable but requires careful management.
+
+### Recommendations for Future Projects
+1. Use AI primarily for initial prototyping and feature exploration
+2. Take control of the codebase earlier in the development cycle
+3. Implement strict architecture patterns from the start
+4. Schedule regular human-led refactoring sessions
+5. Use AI as a complementary tool rather than the primary developer
+6. Document architectural decisions early and maintain them throughout
+7. Set clear boundaries for AI involvement in different development phases
+
+The future of AI in development is promising, but success lies in understanding both its capabilities and limitations. By leveraging AI's strengths while actively managing its limitations, developers can create successful applications more efficiently than ever before. ]]></content:encoded>
+            <author>contact@davidbonan.com (David Bonan)</author>
         </item>
         <item>
             <title><![CDATA[Mastering JavaScript Data Structures: Beyond Arrays]]></title>
@@ -33,6 +323,81 @@
             <guid>https://davidbonan.io/blog/mastering-javascript-data-structures-beyond-arrays</guid>
             <pubDate>Fri, 15 Nov 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Learn how choosing the right data structure in JavaScript can significantly improve your code performance and readability.]]></description>
+            <content:encoded><![CDATA[
+For years, many developers, including myself, have defaulted to using Arrays for every data collection in JavaScript. We often believed that using a simple for...i loop was far more efficient than chaining methods like .filter().map().sort(), assuming it would avoid the apparent O(n) + O(n) + O(n) complexity.
+
+However, a simple piece of feedback about being more mindful of data structure choices completely changed my perspective. Let's explore how choosing the right data structure can transform your JavaScript code.
+
+## The Power of Proper Data Structures
+
+Instead of defaulting to Arrays, consider these powerful alternatives based on your specific needs:
+
+1. **Map** - When you need frequent lookups:
+
+```javascript
+// Instead of an array of objects
+const users = new Map()
+users.set('user1', { name: 'John', age: 30 })
+// O(1) lookup time
+const user = users.get('user1')
+```
+
+2. **Set** - When you need unique values:
+
+```javascript
+// Instead of filtering arrays for unique values
+const uniqueIds = new Set(['id1', 'id2', 'id1'])
+// Automatically handles duplicates
+console.log([...uniqueIds]) // ['id1', 'id2']
+```
+
+3. **WeakMap** - For ephemeral cache management:
+
+```javascript
+// Perfect for memory-sensitive caching
+const cache = new WeakMap()
+let object = { data: 'temporary' }
+cache.set(object, 'cached value')
+// Automatically cleaned up when object is garbage collected
+```
+
+## JavaScript Engine Optimization Tips
+
+The JavaScript engine (V8) has some interesting optimizations that we can leverage. One crucial factor is maintaining consistent object shapes within collections. For example:
+
+```javascript
+// Faster to process - same shape
+const consistentObjects = [{ name: 'John' }, { name: 'Jane' }]
+
+// Slower to process - different shapes
+const inconsistentObjects = [{ name: 'John' }, { age: 30 }]
+```
+
+The V8 engine can process the first array almost twice as fast because all objects share the same property structure.
+
+## Best Practices for Data Structure Selection
+
+When choosing a data structure, consider these factors:
+
+1. **Access Patterns** - How will you primarily interact with the data?
+2. **Memory Constraints** - Do you need garbage collection support?
+3. **Performance Requirements** - What operations need to be optimized?
+4. **Data Uniqueness** - Do you need to maintain unique values?
+
+## Conclusion
+
+Moving beyond the default Array can significantly improve your JavaScript applications. By choosing the right data structure for your specific use case, you can achieve better performance, cleaner code, and more maintainable applications.
+
+Remember:
+
+- Use Map for frequent lookups
+- Use Set for unique collections
+- Use WeakMap for garbage-collection-friendly caching
+- Keep object shapes consistent within collections
+
+The next time you reach for an Array, pause and consider if another data structure might better serve your needs. Your future self (and your application's performance) will thank you.
+]]></content:encoded>
+            <author>contact@davidbonan.com (David Bonan)</author>
         </item>
         <item>
             <title><![CDATA[Solving N² Complexity with JavaScript Maps]]></title>
@@ -40,6 +405,145 @@
             <guid>https://davidbonan.io/blog/solving-n2-complexity-with-javascript-maps</guid>
             <pubDate>Wed, 20 Nov 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Learn how to transform inefficient nested loops into performant solutions using JavaScript Maps.]]></description>
+            <content:encoded><![CDATA[
+As developers, we often encounter situations where we need to find relationships between elements in different arrays. The immediate solution that comes to mind is usually nested loops, leading to O(n²) complexity. 
+However, beyond poor performance, there’s a more serious problem: in high-traffic environments, an O(n²) algorithm can block the event loop and freeze your server. 
+
+Let's explore a real-world example and see how we can dramatically improve performance using JavaScript Maps.
+
+## The N² Problem
+
+Consider this common scenario where we need to match users with their orders:
+
+```javascript
+const users = [
+  { id: 1, name: 'Alice' },
+  { id: 2, name: 'Bob' },
+  // ... potentially thousands of users
+]
+
+const orders = [
+  { userId: 1, product: 'Laptop' },
+  { userId: 2, product: 'Phone' },
+  // ... potentially thousands of orders
+]
+
+// Inefficient O(n²) solution
+const getUserOrders = () => {
+  return users.map((user) => {
+    const userOrders = orders.filter((order) => order.userId === user.id)
+    return {
+      ...user,
+      orders: userOrders,
+    }
+  })
+}
+```
+
+With this approach, for each user, we're scanning through the entire orders array. If we have 1,000 users and 1,000 orders, we're performing 1,000,000 comparisons!
+
+## The Bigger Problem: Blocking the Event Loop
+
+JavaScript runs on a single thread, meaning the event loop is responsible for processing all tasks, from handling HTTP requests to database queries. When a computationally expensive operation like an O(n²) loop takes too long, it blocks the event loop, causing the server to stop responding to incoming requests. This can result in:
+- Delayed Responses: Other users experience increased latency.
+- Server Freezes: Requests can time out, degrading the user experience.
+- Wasted Resources: In a microservices architecture, a frozen service may trigger cascading failures.
+
+This is why solving O(n²) complexity isn’t just about optimizing performance—it’s about keeping your application responsive and stable.
+
+## The Map Solution
+
+Here's how we can solve this using a Map to achieve O(n) complexity:
+
+```javascript
+const getUserOrdersEfficient = () => {
+  // Create a Map of orders indexed by userId
+  const orderMap = new Map()
+  orders.forEach((order) => {
+    if (!orderMap.has(order.userId)) {
+      orderMap.set(order.userId, [])
+    }
+    orderMap.get(order.userId).push(order)
+  })
+
+  // Now we can look up orders directly by userId
+  return users.map((user) => ({
+    ...user,
+    orders: orderMap.get(user.id) || [],
+  }))
+}
+```
+
+## Performance Comparison
+
+Let's look at the actual performance difference:
+
+```javascript
+// Test with larger datasets
+const generateTestData = (size) => {
+  const users = Array.from({ length: size }, (_, i) => ({
+    id: i + 1,
+    name: `User${i + 1}`,
+  }))
+  const orders = Array.from({ length: size }, (_, i) => ({
+    userId: Math.floor(Math.random() * size) + 1,
+    product: `Product${i + 1}`,
+  }))
+  return { users, orders }
+}
+
+const { users, orders } = generateTestData(10000)
+
+console.time('N² Solution')
+getUserOrders()
+console.timeEnd('N² Solution')
+// N² Solution: ~500ms
+
+console.time('Map Solution')
+getUserOrdersEfficient()
+console.timeEnd('Map Solution')
+// Map Solution: ~5ms
+```
+
+## Why Maps Are Better Here
+
+1. **Single Pass Processing**: We only need to iterate through each array once
+2. **O(1) Lookups**: Map provides constant-time access to stored values
+3. **Memory Efficient**: We're trading a small amount of memory for massive performance gains
+4. **Scalability**: Performance remains linear as data size grows
+
+## Best Practices for Using Maps
+
+When implementing this pattern, keep in mind:
+
+1. **Pre-size Your Maps**: If you know the size of your data, you can optimize memory allocation:
+
+```javascript
+const orderMap = new Map()
+orderMap.set(user.id, [])
+```
+
+2. **Clear References**: When you're done, clear the Map to help garbage collection:
+
+```javascript
+orderMap.clear()
+```
+
+## Conclusion
+
+Next time you find yourself writing nested loops, stop and consider if a Map-based solution might be more appropriate. The small effort of restructuring your data can lead to dramatic performance improvements, especially as your datasets grow.
+
+Remember:
+
+- Nested loops are often a red flag for performance issues
+- Maps provide O(1) lookup time
+- O(n²) algorithms can block the event loop and freeze the server
+- The extra memory usage is usually worth the performance gain
+- Always measure performance with realistic data sizes
+
+By making smart choices about data structures, we can write code that not only works but scales efficiently with our applications' growth.
+]]></content:encoded>
+            <author>contact@davidbonan.com (David Bonan)</author>
         </item>
         <item>
             <title><![CDATA[Why Unit Tests Can Harm Your Codebase and Prevent Refactoring]]></title>
@@ -47,6 +551,86 @@
             <guid>https://davidbonan.io/blog/why-unit-tests-can-harm-your-codebase</guid>
             <pubDate>Fri, 15 Nov 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Learn why over-testing intermediate methods can lead to rigid code and how to make better decisions about what to test.]]></description>
+            <content:encoded><![CDATA[
+As developers, we often hear that more tests equal better code quality. However, there's a hidden trap in this thinking that can lead to inflexible codebases and make refactoring nearly impossible. Let's explore why some unit tests can actually harm your codebase and how to avoid these pitfalls.
+
+## The Problem with Over-Testing
+
+The more you test intermediate methods—those that aren't entry points to your business logic—the more rigid your code becomes. But why is this happening?
+
+```javascript
+// Example of an intermediate method that shouldn't necessarily be tested
+const calculateSubTotal = (items) => {
+  return items.reduce((sum, item) => sum + item.price, 0)
+}
+
+// This is the actual business logic entry point that should be tested
+const calculateFinalPrice = (items, discountCode) => {
+  const subTotal = calculateSubTotal(items)
+  const discount = applyDiscount(subTotal, discountCode)
+  return subTotal - discount
+}
+```
+
+When you write tests for `calculateSubTotal`, you're essentially cementing its implementation. Any future refactoring that might want to combine or split this logic differently would require changing the tests, even if the final behavior remains the same.
+
+## When Should You Write Tests?
+
+Before writing a test, ask yourself these crucial questions:
+
+1. **Is this method already covered by higher-level tests?**
+
+   - If your entry point method already tests this functionality, additional tests might be redundant
+
+2. **Is this method a crucial entry point?**
+
+   - Focus on testing the public API of your modules
+
+3. **Is this part of your application's contract?**
+   - Test the behaviors that other parts of your system depend on
+
+## Better Testing Strategies
+
+Instead of testing everything, focus on:
+
+```javascript
+// DO test public API endpoints
+describe('OrderService', () => {
+  it('should calculate final price with discount', () => {
+    const items = [{ price: 100 }, { price: 200 }]
+    const result = orderService.calculateFinalPrice(items, 'DISCOUNT10')
+    expect(result).toBe(270) // Tests the final business outcome
+  })
+})
+
+// DON'T test private implementation details
+// avoid testing calculateSubTotal() directly
+```
+
+## The Impact on Refactoring
+
+When you over-test, refactoring becomes challenging because:
+
+1. Every internal change requires updating multiple tests
+2. Test maintenance becomes a significant overhead
+3. Developers become reluctant to make necessary changes
+
+## Best Practices for Sustainable Testing
+
+To maintain a healthy codebase:
+
+- Test behaviors, not implementations
+- Focus on entry points and public APIs
+- Keep internal implementations flexible
+- Write tests that support refactoring, not prevent it
+
+## Conclusion
+
+While testing is crucial for maintaining code quality, over-testing can be just as harmful as under-testing. By focusing on testing the right things—entry points, public APIs, and crucial business logic—you can maintain a robust test suite that verifies your application's behavior while still allowing for future refactoring and improvements.
+
+Remember: The goal of testing is to ensure your application works correctly, not to document every internal implementation detail. Make your tests work for you, not against you.
+]]></content:encoded>
+            <author>contact@davidbonan.com (David Bonan)</author>
         </item>
     </channel>
 </rss>
