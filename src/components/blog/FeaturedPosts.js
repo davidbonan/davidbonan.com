@@ -3,6 +3,7 @@ import { BlogGrid } from '@/components/blog/BlogGrid'
 
 import { allPosts } from 'contentlayer/generated'
 import { compareDesc } from 'date-fns'
+import { Button } from '../Button'
 
 export function FeaturedPosts() {
   const posts = allPosts
@@ -30,6 +31,11 @@ export function FeaturedPosts() {
         </h2>
 
         <BlogGrid posts={posts} featured={true} />
+        <div className="mt-16 flex justify-center">
+          <Button href="/blog" className="mx-auto" variant="secondary">
+            View all posts
+          </Button>
+        </div>
       </Container>
     </section>
   )
