@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "rss": "node src/lib/rss.js"
+    "rss": "node rss.js"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",

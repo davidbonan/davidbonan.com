@@ -1,14 +1,14 @@
-// import { allPosts } from 'contentlayer/generated'
-import { Feed } from 'feed';
-import fs from 'fs';
-import allPosts from '../../.contentlayer/generated/Post/_index.json' with { type: 'json' };
+import { Feed } from 'feed'
+import fs from 'fs'
+import allPosts from './.contentlayer/generated/Post/_index.json' with { type: 'json' }
 
 export default async function generateRssFeed() {
   const site_url = 'https://davidbonan.io'
 
   const feedOptions = {
     title: 'David Bonan | Blog',
-    description: 'David Bonan - Developer, entrepreneur, and general technology enthusiast',
+    description:
+      'David Bonan - Developer, entrepreneur, and general technology enthusiast',
     id: site_url,
     link: site_url,
     image: `${site_url}/logo.png`,
@@ -35,8 +35,8 @@ export default async function generateRssFeed() {
   })
 
   fs.writeFileSync('./public/rss.xml', feed.rss2())
-  fs.writeFileSync('./public/rss.json', feed.json1());
-  fs.writeFileSync('./public/atom.xml', feed.atom1());
+  fs.writeFileSync('./public/rss.json', feed.json1())
+  fs.writeFileSync('./public/atom.xml', feed.atom1())
 }
 
 generateRssFeed().then(() => {
