@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://davidbonan.io</id>
+    <title>David Bonan | Blog</title>
+    <updated>2025-01-31T13:14:34.309Z</updated>
+    <generator>Feed for developer</generator>
+    <link rel="alternate" href="https://davidbonan.io"/>
+    <link rel="self" href="https://davidbonan.io/atom.xml"/>
+    <subtitle>David Bonan - Developer, entrepreneur, and general technology enthusiast</subtitle>
+    <logo>https://davidbonan.io/logo.png</logo>
+    <icon>https://davidbonan.io/favicon.ico</icon>
+    <rights>All rights reserved 2025, David Bonan</rights>
+    <entry>
+        <title type="html"><![CDATA[Boosting Performance with Web Workers]]></title>
+        <id>https://davidbonan.io/blog/boosting-performance-with-web-workers</id>
+        <link href="https://davidbonan.io/blog/boosting-performance-with-web-workers"/>
+        <updated>2024-11-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Learn how to leverage Web Workers to run CPU-intensive tasks without blocking the main thread in JavaScript applications.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mastering JavaScript Data Structures: Beyond Arrays]]></title>
+        <id>https://davidbonan.io/blog/mastering-javascript-data-structures-beyond-arrays</id>
+        <link href="https://davidbonan.io/blog/mastering-javascript-data-structures-beyond-arrays"/>
+        <updated>2024-11-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Learn how choosing the right data structure in JavaScript can significantly improve your code performance and readability.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Solving N² Complexity with JavaScript Maps]]></title>
+        <id>https://davidbonan.io/blog/solving-n2-complexity-with-javascript-maps</id>
+        <link href="https://davidbonan.io/blog/solving-n2-complexity-with-javascript-maps"/>
+        <updated>2024-11-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Learn how to transform inefficient nested loops into performant solutions using JavaScript Maps.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Why Unit Tests Can Harm Your Codebase and Prevent Refactoring]]></title>
+        <id>https://davidbonan.io/blog/why-unit-tests-can-harm-your-codebase</id>
+        <link href="https://davidbonan.io/blog/why-unit-tests-can-harm-your-codebase"/>
+        <updated>2024-11-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Learn why over-testing intermediate methods can lead to rigid code and how to make better decisions about what to test.]]></summary>
+    </entry>
+</feed>

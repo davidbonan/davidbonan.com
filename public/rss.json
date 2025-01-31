@@ -1,0 +1,38 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "David Bonan | Blog",
+    "home_page_url": "https://davidbonan.io",
+    "feed_url": "https://davidbonan.io/rss.json",
+    "description": "David Bonan - Developer, entrepreneur, and general technology enthusiast",
+    "icon": "https://davidbonan.io/logo.png",
+    "items": [
+        {
+            "id": "https://davidbonan.io/blog/boosting-performance-with-web-workers",
+            "url": "https://davidbonan.io/blog/boosting-performance-with-web-workers",
+            "title": "Boosting Performance with Web Workers",
+            "summary": "Learn how to leverage Web Workers to run CPU-intensive tasks without blocking the main thread in JavaScript applications.",
+            "date_modified": "2024-11-25T00:00:00.000Z"
+        },
+        {
+            "id": "https://davidbonan.io/blog/mastering-javascript-data-structures-beyond-arrays",
+            "url": "https://davidbonan.io/blog/mastering-javascript-data-structures-beyond-arrays",
+            "title": "Mastering JavaScript Data Structures: Beyond Arrays",
+            "summary": "Learn how choosing the right data structure in JavaScript can significantly improve your code performance and readability.",
+            "date_modified": "2024-11-15T00:00:00.000Z"
+        },
+        {
+            "id": "https://davidbonan.io/blog/solving-n2-complexity-with-javascript-maps",
+            "url": "https://davidbonan.io/blog/solving-n2-complexity-with-javascript-maps",
+            "title": "Solving N² Complexity with JavaScript Maps",
+            "summary": "Learn how to transform inefficient nested loops into performant solutions using JavaScript Maps.",
+            "date_modified": "2024-11-20T00:00:00.000Z"
+        },
+        {
+            "id": "https://davidbonan.io/blog/why-unit-tests-can-harm-your-codebase",
+            "url": "https://davidbonan.io/blog/why-unit-tests-can-harm-your-codebase",
+            "title": "Why Unit Tests Can Harm Your Codebase and Prevent Refactoring",
+            "summary": "Learn why over-testing intermediate methods can lead to rigid code and how to make better decisions about what to test.",
+            "date_modified": "2024-11-15T00:00:00.000Z"
+        }
+    ]
+}

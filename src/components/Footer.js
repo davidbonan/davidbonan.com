@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import { Button } from './Button'
 import { Container } from './Container'
-import { EmailIcon, GitHubIcon, LinkedInIcon } from './SocialIcons'
+import { EmailIcon, GitHubIcon, LinkedInIcon, RssIcon } from './SocialIcons'
 
 const links = [
   // { label: 'Home', href: '/' },
@@ -125,9 +125,15 @@ export function Footer() {
                 </Link>
               ))}
             </div>
-            <p className="mt-8 text-base text-slate-400/90 md:mt-0">
-              © {new Date().getFullYear()} Tailwind Awesome. All rights
-              reserved.
+            <p className="mt-8 flex items-center gap-2 text-base text-slate-400/90 md:mt-0">
+              © {new Date().getFullYear()} David Bonan. All rights reserved.
+              <Link
+                href="/rss.xml"
+                target="_blank"
+                className="duration-200 ease-in-out hover:text-slate-300"
+              >
+                <RssIcon />
+              </Link>
             </p>
           </div>
         </Container>
