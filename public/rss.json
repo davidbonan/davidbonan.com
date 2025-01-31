@@ -3,7 +3,7 @@
     "title": "David Bonan | Blog",
     "home_page_url": "https://davidbonan.io",
     "feed_url": "https://davidbonan.io/rss.json",
-    "description": "David Bonan - Developer, entrepreneur, and general technology enthusiast",
+    "description": "David Bonan - Senior developer, entrepreneur, and general technology enthusiast",
     "icon": "https://davidbonan.io/logo.png",
     "items": [
         {
@@ -12,6 +12,13 @@
             "title": "Boosting Performance with Web Workers",
             "summary": "Learn how to leverage Web Workers to run CPU-intensive tasks without blocking the main thread in JavaScript applications.",
             "date_modified": "2024-11-25T00:00:00.000Z"
+        },
+        {
+            "id": "https://davidbonan.io/blog/building-mobile-app-with-ai-a-journey",
+            "url": "https://davidbonan.io/blog/building-mobile-app-with-ai-a-journey",
+            "title": "Building a Mobile App with AI: A Journey from Concept to App Store",
+            "summary": "A real-world experience of using AI tools like Cursor and Claude to build a mobile application from scratch, highlighting both benefits and challenges.",
+            "date_modified": "2025-01-31T00:00:00.000Z"
         },
         {
             "id": "https://davidbonan.io/blog/mastering-javascript-data-structures-beyond-arrays",

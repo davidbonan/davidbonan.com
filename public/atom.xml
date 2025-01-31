@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://davidbonan.io</id>
     <title>David Bonan | Blog</title>
-    <updated>2025-01-31T13:25:34.296Z</updated>
+    <updated>2025-01-31T14:40:38.293Z</updated>
     <generator>Feed for developer</generator>
     <link rel="alternate" href="https://davidbonan.io"/>
     <link rel="self" href="https://davidbonan.io/atom.xml"/>
-    <subtitle>David Bonan - Developer, entrepreneur, and general technology enthusiast</subtitle>
+    <subtitle>David Bonan - Senior developer, entrepreneur, and general technology enthusiast</subtitle>
     <logo>https://davidbonan.io/logo.png</logo>
     <icon>https://davidbonan.io/favicon.ico</icon>
     <rights>All rights reserved 2025, David Bonan</rights>
@@ -16,6 +16,13 @@
         <link href="https://davidbonan.io/blog/boosting-performance-with-web-workers"/>
         <updated>2024-11-25T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Learn how to leverage Web Workers to run CPU-intensive tasks without blocking the main thread in JavaScript applications.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Building a Mobile App with AI: A Journey from Concept to App Store]]></title>
+        <id>https://davidbonan.io/blog/building-mobile-app-with-ai-a-journey</id>
+        <link href="https://davidbonan.io/blog/building-mobile-app-with-ai-a-journey"/>
+        <updated>2025-01-31T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A real-world experience of using AI tools like Cursor and Claude to build a mobile application from scratch, highlighting both benefits and challenges.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Mastering JavaScript Data Structures: Beyond Arrays]]></title>

@@ -24,7 +24,7 @@ export const metadata = {
   title: {
     template: '%s - David Bonan',
     default:
-      'David Bonan - Developer, entrepreneur, and general technology enthusiast',
+      'David Bonan - Senior developer, entrepreneur, and general technology enthusiast',
   },
 }
 

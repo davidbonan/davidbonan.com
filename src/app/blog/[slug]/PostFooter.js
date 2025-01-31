@@ -1,14 +1,14 @@
 'use client'
 
 import {
-  LinkedInIcon,
   FacebookIcon,
+  LinkedInIcon,
   TwitterIcon,
 } from '@/components/SocialIcons'
 import {
   FacebookShareButton,
-  TwitterShareButton,
   LinkedinShareButton,
+  TwitterShareButton,
 } from 'next-share'
 
 function SocialIcon({ icon: Icon, ...props }) {
@@ -28,11 +28,17 @@ export function PostFooter() {
 
   return (
     <footer className="mx-auto max-w-2xl">
-      <hr className="mt-14 h-px w-full pb-6 text-slate-300/75 sm:pb-4" />
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-        <p className="pl-0.5 text-lg font-semibold tracking-wide text-slate-900 sm:pl-0">
-          Share article
-        </p>
+      <div className="mt-14 flex items-center justify-between">
+        <div>
+          <p className="text-sm font-medium text-slate-700">Written by</p>
+          <p className="text-lg font-semibold  text-slate-900">David Bonan</p>
+          <p className="text-sm italic text-slate-500">
+            Senior developer - Typescript, React, Next.js & Node.js
+          </p>
+        </div>
+      </div>
+      <hr className="mt-14 h-px w-full pb-2 text-slate-300/75 sm:pb-8" />
+      <div className="flex flex-col pb-4 sm:flex-row sm:items-center sm:justify-end sm:pb-10">
         <div className="mt-2.5 flex gap-3 sm:mt-0 sm:gap-4">
           <button className="group flex h-10 items-center justify-center gap-3 rounded-full border border-slate-200 px-6 text-sm font-medium text-slate-600 duration-200 ease-in-out hover:bg-slate-50">
             <svg

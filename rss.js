@@ -8,7 +8,7 @@ export default async function generateRssFeed() {
   const feedOptions = {
     title: 'David Bonan | Blog',
     description:
-      'David Bonan - Developer, entrepreneur, and general technology enthusiast',
+      'David Bonan - Senior developer, entrepreneur, and general technology enthusiast',
     id: site_url,
     link: site_url,
     image: `${site_url}/logo.png`,
