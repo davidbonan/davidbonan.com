@@ -5,5 +5,8 @@ import blog__buildingMobileAppWithAiAJourneyMdx from './blog__building-mobile-ap
 import blog__masteringJavascriptDataStructuresBeyondArraysMdx from './blog__mastering-javascript-data-structures-beyond-arrays.mdx.json' assert { type: 'json' }
 import blog__solvingN2ComplexityWithJavascriptMapsMdx from './blog__solving-n2-complexity-with-javascript-maps.mdx.json' assert { type: 'json' }
 import blog__whyUnitTestsCanHarmYourCodebaseMdx from './blog__why-unit-tests-can-harm-your-codebase.mdx.json' assert { type: 'json' }
+import blog__effectiveCodeReviewsBeyondNitpickingMdx from './blog__effective-code-reviews-beyond-nitpicking.mdx.json' assert { type: 'json' }
+import blog__optimizingReactPerformancePracticalGuideMdx from './blog__optimizing-react-performance-practical-guide.mdx.json' assert { type: 'json' }
+import blog__leveragingTypescriptAdvancedTypesPracticalUsesMdx from './blog__leveraging-typescript-advanced-types-practical-uses.mdx.json' assert { type: 'json' }
 
-export const allPosts = [blog__boostingPerformanceWithWebWorkersMdx, blog__buildingMobileAppWithAiAJourneyMdx, blog__masteringJavascriptDataStructuresBeyondArraysMdx, blog__solvingN2ComplexityWithJavascriptMapsMdx, blog__whyUnitTestsCanHarmYourCodebaseMdx]
+export const allPosts = [blog__boostingPerformanceWithWebWorkersMdx, blog__buildingMobileAppWithAiAJourneyMdx, blog__masteringJavascriptDataStructuresBeyondArraysMdx, blog__solvingN2ComplexityWithJavascriptMapsMdx, blog__whyUnitTestsCanHarmYourCodebaseMdx, blog__effectiveCodeReviewsBeyondNitpickingMdx, blog__optimizingReactPerformancePracticalGuideMdx, blog__leveragingTypescriptAdvancedTypesPracticalUsesMdx]
