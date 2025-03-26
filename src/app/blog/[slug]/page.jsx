@@ -33,6 +33,19 @@ export default function BlogPost({ params }) {
   const categorySlug = post.category.replace(/ /g, '-').toLowerCase()
   const CategoryIcon = iconOptions[post.category]
 
+  // Find adjacent posts for navigation
+  const sortedPosts = [...allPosts].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  )
+
+  const currentPostIndex = sortedPosts.findIndex((p) => p.slug === post.slug)
+  const prevPost =
+    currentPostIndex < sortedPosts.length - 1
+      ? sortedPosts[currentPostIndex + 1]
+      : null
+  const nextPost =
+    currentPostIndex > 0 ? sortedPosts[currentPostIndex - 1] : null
+
   return (
     <>
       <main>
@@ -112,7 +125,7 @@ export default function BlogPost({ params }) {
             <div className="prose prose-lg mx-auto max-w-2xl">
               <MdxContent code={post.body.code} />
             </div>
-            <PostFooter />
+            <PostFooter prevPost={prevPost} nextPost={nextPost} />
           </div>
         </article>
       </main>
