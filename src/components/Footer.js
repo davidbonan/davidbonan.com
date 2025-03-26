@@ -131,6 +131,7 @@ export function Footer() {
                 href="/rss.xml"
                 target="_blank"
                 className="duration-200 ease-in-out hover:text-slate-300"
+                aria-label="RSS Feed"
               >
                 <RssIcon />
               </Link>
