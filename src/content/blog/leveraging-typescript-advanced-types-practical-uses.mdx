@@ -4,7 +4,7 @@ title: 'Leveraging TypeScript Advanced Types: Practical Uses Beyond Basics'
 category: 'Development'
 image: '/images/articles/typescript-advanced.png'
 description: "How to use TypeScript's advanced type features to solve real-world problems and create more maintainable codebases."
-timeToRead: 9
+timeToRead: 12
 ---
 
 TypeScript adoption has grown tremendously across the JavaScript ecosystem, but many developers only scratch the surface of its powerful type system. After working with numerous teams transitioning to TypeScript, I've found that mastering advanced types can dramatically reduce bugs and improve code maintainability. Let me share some practical examples that transformed our development experience.
@@ -309,6 +309,73 @@ const invalidInput = <Input type="text" name="test" label="Test" options={[]} />
 
 This pattern creates a truly type-safe API while maintaining a clean developer experience.
 
+## Built-in Utility Types: Hidden Gems
+
+TypeScript comes with powerful built-in utility types that many developers overlook. Here are the most practical ones we use daily:
+
+### Pick and Omit for API Design
+
+```typescript
+// Original user type
+type User = {
+  id: string
+  email: string
+  password: string
+  firstName: string
+  lastName: string
+  createdAt: Date
+  updatedAt: Date
+}
+
+// API response (omit sensitive fields)
+type UserResponse = Omit<User, 'password'>
+
+// User registration payload (pick only required fields)
+type UserRegistration = Pick<User, 'email' | 'password' | 'firstName' | 'lastName'>
+
+// User update payload (make fields optional)
+type UserUpdate = Partial<Pick<User, 'firstName' | 'lastName' | 'email'>>
+```
+
+### Record for Dynamic Objects
+
+```typescript
+// Instead of any or unknown for dynamic objects
+type APIEndpoints = Record<string, { method: 'GET' | 'POST' | 'PUT' | 'DELETE'; path: string }>
+
+const endpoints: APIEndpoints = {
+  getUsers: { method: 'GET', path: '/users' },
+  createUser: { method: 'POST', path: '/users' },
+  updateUser: { method: 'PUT', path: '/users/:id' }
+}
+
+// Type-safe configuration objects
+type FeatureFlags = Record<string, boolean>
+type ThemeColors = Record<'primary' | 'secondary' | 'accent', string>
+```
+
+### ReturnType and Parameters for Function Types
+
+```typescript
+// Extract return type from existing functions
+function fetchUserData(id: string) {
+  return Promise.resolve({ id, name: 'John', email: 'john@example.com' })
+}
+
+type UserData = Awaited<ReturnType<typeof fetchUserData>>
+// Result: { id: string; name: string; email: string }
+
+// Extract parameter types
+type FetchUserParams = Parameters<typeof fetchUserData>
+// Result: [id: string]
+
+// Useful for creating type-safe wrappers
+function loggedFetchUserData(...args: Parameters<typeof fetchUserData>): ReturnType<typeof fetchUserData> {
+  console.log('Fetching user:', args[0])
+  return fetchUserData(...args)
+}
+```
+
 ## Practical Impact on Our Development
 
 After adopting these advanced TypeScript patterns, we measured significant improvements:
@@ -382,9 +449,27 @@ function isUser(value: unknown): value is User {
   return (
     typeof value === 'object' &&
     value !== null &&
+    'id' in value &&
     'name' in value &&
-    typeof value.name === 'string'
+    'isActive' in value &&
+    typeof (value as any).id === 'number' &&
+    typeof (value as any).name === 'string' &&
+    typeof (value as any).isActive === 'boolean'
   )
+}
+
+// For complex validation, consider using libraries like Zod
+import { z } from 'zod'
+
+const UserSchema = z.object({
+  id: z.number(),
+  name: z.string(),
+  isActive: z.boolean()
+})
+
+function validateUser(data: unknown): User | null {
+  const result = UserSchema.safeParse(data)
+  return result.success ? result.data : null
 }
 ```
 

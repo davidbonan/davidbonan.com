@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://davidbonan.io</id>
     <title>David Bonan | Blog</title>
-    <updated>2025-01-31T14:54:12.273Z</updated>
+    <updated>2025-08-01T15:00:41.384Z</updated>
     <generator>Feed for developer</generator>
     <link rel="alternate" href="https://davidbonan.io"/>
     <link rel="self" href="https://davidbonan.io/atom.xml"/>
@@ -35,11 +35,71 @@
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Claude Code vs Cursor: A Monorepo Showdown]]></title>
+        <id>https://davidbonan.io/blog/claude-code-vs-cursor-monorepo-showdown</id>
+        <link href="https://davidbonan.io/blog/claude-code-vs-cursor-monorepo-showdown"/>
+        <updated>2025-08-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A real-world comparison of Claude Code and Cursor when building complex features in a large monorepo, exploring their strengths and limitations.]]></summary>
+        <author>
+            <name>David Bonan</name>
+            <email>contact@davidbonan.com</email>
+            <uri>https://davidbonan.io</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Debugging Slow SQL Server Queries: A Developer's Practical Guide]]></title>
+        <id>https://davidbonan.io/blog/debugging-slow-sql-server-queries-practical-guide</id>
+        <link href="https://davidbonan.io/blog/debugging-slow-sql-server-queries-practical-guide"/>
+        <updated>2025-07-31T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Learn how to systematically identify and optimize slow SQL Server queries using execution plans, profiling tools, and proven techniques.]]></summary>
+        <author>
+            <name>David Bonan</name>
+            <email>contact@davidbonan.com</email>
+            <uri>https://davidbonan.io</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Effective Code Reviews: Beyond Nitpicking]]></title>
+        <id>https://davidbonan.io/blog/effective-code-reviews-beyond-nitpicking</id>
+        <link href="https://davidbonan.io/blog/effective-code-reviews-beyond-nitpicking"/>
+        <updated>2025-03-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Transform your code review process from a bottleneck into a valuable team practice that improves code quality and knowledge sharing.]]></summary>
+        <author>
+            <name>David Bonan</name>
+            <email>contact@davidbonan.com</email>
+            <uri>https://davidbonan.io</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Leveraging TypeScript Advanced Types: Practical Uses Beyond Basics]]></title>
+        <id>https://davidbonan.io/blog/leveraging-typescript-advanced-types-practical-uses</id>
+        <link href="https://davidbonan.io/blog/leveraging-typescript-advanced-types-practical-uses"/>
+        <updated>2025-03-22T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[How to use TypeScript's advanced type features to solve real-world problems and create more maintainable codebases.]]></summary>
+        <author>
+            <name>David Bonan</name>
+            <email>contact@davidbonan.com</email>
+            <uri>https://davidbonan.io</uri>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Mastering JavaScript Data Structures: Beyond Arrays]]></title>
         <id>https://davidbonan.io/blog/mastering-javascript-data-structures-beyond-arrays</id>
         <link href="https://davidbonan.io/blog/mastering-javascript-data-structures-beyond-arrays"/>
         <updated>2024-11-15T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Learn how choosing the right data structure in JavaScript can significantly improve your code performance and readability.]]></summary>
+        <author>
+            <name>David Bonan</name>
+            <email>contact@davidbonan.com</email>
+            <uri>https://davidbonan.io</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Optimizing React Performance: A Practical Guide]]></title>
+        <id>https://davidbonan.io/blog/optimizing-react-performance-practical-guide</id>
+        <link href="https://davidbonan.io/blog/optimizing-react-performance-practical-guide"/>
+        <updated>2025-03-24T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Learn practical techniques to identify and fix performance bottlenecks in your React applications.]]></summary>
         <author>
             <name>David Bonan</name>
             <email>contact@davidbonan.com</email>

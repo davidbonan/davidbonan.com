@@ -4,7 +4,7 @@
         <title>David Bonan | Blog</title>
         <link>https://davidbonan.io</link>
         <description>David Bonan - Senior developer, entrepreneur, and general technology enthusiast</description>
-        <lastBuildDate>Fri, 31 Jan 2025 14:54:12 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 01 Aug 2025 15:00:41 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for developer</generator>
         <image>
@@ -30,11 +30,51 @@
             <author>contact@davidbonan.com (David Bonan)</author>
         </item>
         <item>
+            <title><![CDATA[Claude Code vs Cursor: A Monorepo Showdown]]></title>
+            <link>https://davidbonan.io/blog/claude-code-vs-cursor-monorepo-showdown</link>
+            <guid>https://davidbonan.io/blog/claude-code-vs-cursor-monorepo-showdown</guid>
+            <pubDate>Fri, 01 Aug 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[A real-world comparison of Claude Code and Cursor when building complex features in a large monorepo, exploring their strengths and limitations.]]></description>
+            <author>contact@davidbonan.com (David Bonan)</author>
+        </item>
+        <item>
+            <title><![CDATA[Debugging Slow SQL Server Queries: A Developer's Practical Guide]]></title>
+            <link>https://davidbonan.io/blog/debugging-slow-sql-server-queries-practical-guide</link>
+            <guid>https://davidbonan.io/blog/debugging-slow-sql-server-queries-practical-guide</guid>
+            <pubDate>Thu, 31 Jul 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Learn how to systematically identify and optimize slow SQL Server queries using execution plans, profiling tools, and proven techniques.]]></description>
+            <author>contact@davidbonan.com (David Bonan)</author>
+        </item>
+        <item>
+            <title><![CDATA[Effective Code Reviews: Beyond Nitpicking]]></title>
+            <link>https://davidbonan.io/blog/effective-code-reviews-beyond-nitpicking</link>
+            <guid>https://davidbonan.io/blog/effective-code-reviews-beyond-nitpicking</guid>
+            <pubDate>Tue, 25 Mar 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Transform your code review process from a bottleneck into a valuable team practice that improves code quality and knowledge sharing.]]></description>
+            <author>contact@davidbonan.com (David Bonan)</author>
+        </item>
+        <item>
+            <title><![CDATA[Leveraging TypeScript Advanced Types: Practical Uses Beyond Basics]]></title>
+            <link>https://davidbonan.io/blog/leveraging-typescript-advanced-types-practical-uses</link>
+            <guid>https://davidbonan.io/blog/leveraging-typescript-advanced-types-practical-uses</guid>
+            <pubDate>Sat, 22 Mar 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[How to use TypeScript's advanced type features to solve real-world problems and create more maintainable codebases.]]></description>
+            <author>contact@davidbonan.com (David Bonan)</author>
+        </item>
+        <item>
             <title><![CDATA[Mastering JavaScript Data Structures: Beyond Arrays]]></title>
             <link>https://davidbonan.io/blog/mastering-javascript-data-structures-beyond-arrays</link>
             <guid>https://davidbonan.io/blog/mastering-javascript-data-structures-beyond-arrays</guid>
             <pubDate>Fri, 15 Nov 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Learn how choosing the right data structure in JavaScript can significantly improve your code performance and readability.]]></description>
+            <author>contact@davidbonan.com (David Bonan)</author>
+        </item>
+        <item>
+            <title><![CDATA[Optimizing React Performance: A Practical Guide]]></title>
+            <link>https://davidbonan.io/blog/optimizing-react-performance-practical-guide</link>
+            <guid>https://davidbonan.io/blog/optimizing-react-performance-practical-guide</guid>
+            <pubDate>Mon, 24 Mar 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Learn practical techniques to identify and fix performance bottlenecks in your React applications.]]></description>
             <author>contact@davidbonan.com (David Bonan)</author>
         </item>
         <item>

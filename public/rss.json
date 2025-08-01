@@ -29,11 +29,66 @@
             }
         },
         {
+            "id": "https://davidbonan.io/blog/claude-code-vs-cursor-monorepo-showdown",
+            "url": "https://davidbonan.io/blog/claude-code-vs-cursor-monorepo-showdown",
+            "title": "Claude Code vs Cursor: A Monorepo Showdown",
+            "summary": "A real-world comparison of Claude Code and Cursor when building complex features in a large monorepo, exploring their strengths and limitations.",
+            "date_modified": "2025-08-01T00:00:00.000Z",
+            "author": {
+                "name": "David Bonan",
+                "url": "https://davidbonan.io"
+            }
+        },
+        {
+            "id": "https://davidbonan.io/blog/debugging-slow-sql-server-queries-practical-guide",
+            "url": "https://davidbonan.io/blog/debugging-slow-sql-server-queries-practical-guide",
+            "title": "Debugging Slow SQL Server Queries: A Developer's Practical Guide",
+            "summary": "Learn how to systematically identify and optimize slow SQL Server queries using execution plans, profiling tools, and proven techniques.",
+            "date_modified": "2025-07-31T00:00:00.000Z",
+            "author": {
+                "name": "David Bonan",
+                "url": "https://davidbonan.io"
+            }
+        },
+        {
+            "id": "https://davidbonan.io/blog/effective-code-reviews-beyond-nitpicking",
+            "url": "https://davidbonan.io/blog/effective-code-reviews-beyond-nitpicking",
+            "title": "Effective Code Reviews: Beyond Nitpicking",
+            "summary": "Transform your code review process from a bottleneck into a valuable team practice that improves code quality and knowledge sharing.",
+            "date_modified": "2025-03-25T00:00:00.000Z",
+            "author": {
+                "name": "David Bonan",
+                "url": "https://davidbonan.io"
+            }
+        },
+        {
+            "id": "https://davidbonan.io/blog/leveraging-typescript-advanced-types-practical-uses",
+            "url": "https://davidbonan.io/blog/leveraging-typescript-advanced-types-practical-uses",
+            "title": "Leveraging TypeScript Advanced Types: Practical Uses Beyond Basics",
+            "summary": "How to use TypeScript's advanced type features to solve real-world problems and create more maintainable codebases.",
+            "date_modified": "2025-03-22T00:00:00.000Z",
+            "author": {
+                "name": "David Bonan",
+                "url": "https://davidbonan.io"
+            }
+        },
+        {
             "id": "https://davidbonan.io/blog/mastering-javascript-data-structures-beyond-arrays",
             "url": "https://davidbonan.io/blog/mastering-javascript-data-structures-beyond-arrays",
             "title": "Mastering JavaScript Data Structures: Beyond Arrays",
             "summary": "Learn how choosing the right data structure in JavaScript can significantly improve your code performance and readability.",
             "date_modified": "2024-11-15T00:00:00.000Z",
+            "author": {
+                "name": "David Bonan",
+                "url": "https://davidbonan.io"
+            }
+        },
+        {
+            "id": "https://davidbonan.io/blog/optimizing-react-performance-practical-guide",
+            "url": "https://davidbonan.io/blog/optimizing-react-performance-practical-guide",
+            "title": "Optimizing React Performance: A Practical Guide",
+            "summary": "Learn practical techniques to identify and fix performance bottlenecks in your React applications.",
+            "date_modified": "2025-03-24T00:00:00.000Z",
             "author": {
                 "name": "David Bonan",
                 "url": "https://davidbonan.io"
