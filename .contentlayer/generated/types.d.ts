@@ -38,10 +38,14 @@ export type Post = {
   type: 'Post'
   title: string
   date: IsoDateTimeString
+  /** Language of the post (en or fr) */
+  language: 'en' | 'fr'
   category: string
   image: string
   description: string
   timeToRead: number
+  /** Links to translations (e.g., { en: "slug-en", fr: "slug-fr" }) */
+  alternates?: any | undefined
   /** MDX file body */
   body: MDX
   url: string

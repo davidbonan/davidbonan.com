@@ -5,7 +5,16 @@ import remarkGfm from 'remark-gfm'
 const computedFields = {
   url: {
     type: 'string',
-    resolve: (doc) => `/${doc._raw.flattenedPath}`,
+    resolve: (doc) => {
+      // Extract slug from filename
+      const slug = doc._raw.sourceFileName.replace('.mdx', '')
+      // For Posts: include language prefix in URL
+      // For CaseStudies: keep current behavior (no language prefix)
+      if (doc.type === 'Post' && doc.language) {
+        return `/${doc.language}/blog/${slug}`
+      }
+      return `/${doc._raw.flattenedPath}`
+    },
   },
   slug: {
     type: 'string',
@@ -20,10 +29,21 @@ export const Post = defineDocumentType(() => ({
   fields: {
     title: { type: 'string', required: true },
     date: { type: 'date', required: true },
+    language: {
+      type: 'enum',
+      options: ['en', 'fr'],
+      required: true,
+      description: 'Language of the post (en or fr)',
+    },
     category: { type: 'string', required: true },
     image: { type: 'string', required: true },
     description: { type: 'string', required: true },
     timeToRead: { type: 'number', required: true }, // in minutes
+    alternates: {
+      type: 'json',
+      required: false,
+      description: 'Links to translations (e.g., { en: "slug-en", fr: "slug-fr" })',
+    },
   },
 
   computedFields,

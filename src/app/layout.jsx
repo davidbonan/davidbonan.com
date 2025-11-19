@@ -28,9 +28,12 @@ export const metadata = {
   },
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, params }) {
+  // Default to English, but will be overridden by locale-specific pages
+  const lang = params?.locale || 'en'
+
   return (
-    <html lang="en">
+    <html lang={lang}>
       <body
         className={clsx(
           'font-sans',

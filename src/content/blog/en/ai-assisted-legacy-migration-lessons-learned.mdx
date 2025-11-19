@@ -1,0 +1,664 @@
+---
+date: '2025-11-14'
+language: 'en'
+title: 'AI-Assisted Legacy Migration: Lessons Learned'
+category: 'Development'
+image: '/images/articles/ai-migration-journey.png'
+description: 'A retrospective on using AI tools intensively for a large codebase migration, from initial failures to a workflow that actually works.'
+timeToRead: 12
+alternates:
+  en: 'ai-assisted-legacy-migration-lessons-learned'
+  fr: 'ai-assisted-legacy-migration-lessons-learned'
+---
+
+"This is going to be amazing," I thought as I watched Claude Code analyze thousands of lines of legacy code. "I'll just point it at the legacy endpoint, and the AI will migrate everything. This migration that would take months? Done in a few weeks."
+
+Four hours later, I was staring at a screen full of hallucinations that confidently referenced functions that didn't exist, implemented patterns we'd never used, and would have spectacularly broken production.
+
+That was Day 1.
+
+Welcome to my seven-week journey to discover how to use AI for a large legacy codebase migration not the YouTube trainer version, but the messy, frustrating, and ultimately productive reality.
+
+## The Challenge: Welcome to the Real World
+
+Forget blog posts about using ChatGPT to build a todo app. This was a production code migration: extracting features from a legacy monolith and rebuilding them in a TypeScript monorepo. Not a greenfield project where mistakes are cheap. Not a prototype where "good enough" suffices.
+
+Real migration. Real stakes. Real complexity:
+
+- **Interconnected systems** where changing one thing breaks three others you didn't know existed
+- **Domain knowledge** buried in comments from 2011, scattered across multiple Git repositories, living only in senior developers' heads
+- **Architectural decisions** that require understanding why something was built a certain way before you can rebuild it differently
+- **Quality standards** where "it works on my machine" isn't acceptable
+
+This is where AI tools promise the most value and where most of them fail spectacularly.
+
+## Week 1: When Hope Meets Reality
+
+### September 18: The Divine Prompt
+
+My strategy was simple: create a perfect prompt containing everything. The complete feature specification. The legacy code context. The new architecture patterns. The migration requirements. Everything.
+
+I pressed Enter and watched Claude Code think. And think. And think some more.
+
+Ten minutes later, it delivered a complete migration plan with detailed implementation steps. Beautiful formatting. Confident explanations. Complete hallucinations.
+
+The AI had invented a caching layer we didn't have. Referenced a state management pattern we'd never used. Proposed migrating database calls to an ORM we weren't using. It was impressively wrong.
+
+**Hours wasted**: Too many to admit.
+
+**Production ready**: Negative.
+
+The AI wasn't analyzing our code it was pattern-matching against its training data and hoping for the best.
+
+### September 19: Breaking the Fantasy
+
+Alright. Plan B: instead of one mega-prompt, break it down. Analysis prompt. Planning prompt. Review prompt. Test specification prompt.
+
+Results immediately improved. Hallucinations went from "complete fiction" to "mostly accurate with creative interpretation." Progress!
+
+But here's the problem: "mostly accurate" isn't a thing in production code. You can't deploy an 85% correct feature. Those remaining 15%? That's where bugs live.
+
+I was spending more time verifying AI output than I would have spent reading the code myself.
+
+## Week 2: The Uncomfortable Truth
+
+### September 22: When I Became the Bottleneck
+
+After three days fighting hallucinations, the pattern became clear: **every time I actually understood the legacy code before prompting the AI, the output was dramatically better**.
+
+It was almost embarrassing how obvious this should have been.
+
+When I blindly asked the AI to analyze code:
+
+```
+"Analyze this authentication module and create a migration plan"
+� AI invents patterns, makes assumptions, confident but wrong
+```
+
+When I analyzed it first, then asked the AI:
+
+```
+"This auth module uses JWT tokens with a custom refresh strategy stored in Redis.
+The legacy implementation has three edge cases: [specific cases].
+Create a migration plan that handles these cases using our new auth service."
+� AI generates an accurate, usable plan
+```
+
+The difference wasn't the AI. The difference was me doing my job first.
+
+**Four hard-won rules emerged:**
+
+1. **Ambiguity kills** - Every vague prompt produced hallucinations. Every specific prompt produced usable code.
+2. **You can't skip understanding** - AI amplifies your understanding; it doesn't replace it.
+3. **AI generates noise** - Specs required manual filtering. AI would include every tangentially related detail.
+4. **Validation is non-negotiable** - Human review of every spec, every plan, every assumption.
+
+The new workflow: **AI Analysis � Human Analysis � Detailed Prompt � AI Generation � Human Validation**
+
+Think pair programming, where you're the senior dev and the AI is the talented junior who needs clear direction.
+
+### The Auto-Accept Mistake
+
+Oh, and I disabled auto-accept for AI modifications.
+
+Watching the AI automatically modify files while I grabbed coffee? That's not productivity. That's gambling with production code.
+
+## Week 3: The Bill Arrives
+
+### September 29: Let's Talk About Time
+
+Time to face the music. I started tracking actual hours:
+
+**Per feature migration:**
+
+- 25 minutes: Planning (AI reads legacy, AI writes specs, human review)
+- 2h30: Implementation with AI (reviewing every change)
+- Unknown: Debugging architectural drift
+
+Those 2h30 of "pair programming" with AI? Half of it was:
+
+- Correcting course when the AI went rogue
+- Explaining why we can't "just refactor everything to use the latest patterns"
+- Undoing changes because the AI's context window filled up and it forgot what we were doing
+
+The brutal truth: **the AI was making architectural decisions it had no business making.**
+
+**Over-engineering is the enemy of productivity**
+
+## October: The Month Everything Broke (Then Got Better)
+
+### October 3: The Multi-Model Epiphany
+
+The initial specifications I'd created? Useful for framing, but too superficial. The AI kept making bad assumptions because my specs were too approximate.
+
+Then I had an idea: what if I had multiple AI models analyze the legacy code independently, then merged their insights?
+
+**The experiment:**
+
+- Claude analyzes the authentication flow
+- Codex analyzes the authentication flow
+- Cursor analyzes the authentication flow
+- Claude merges the three perspectives by checking the legacy and validating findings
+
+Claude noticed error handling patterns. Codex caught edge cases. Cursor identified performance considerations. None of them got everything, but together? Complete coverage.
+
+It was like having three junior devs do a code review each catches different issues.
+
+**Time cost**: Higher upfront.
+
+**Quality improvement**: Dramatic.
+
+**Hallucinations**: Each model's errors were caught by the others.
+
+### October 13: Rock Bottom
+
+I decided to test "autonomous AI development." Give it a clear spec, let it run, see what happens.
+
+The results were... educational.
+
+**What the AI delivered:**
+
+- Branded types that looked correct but had the wrong types
+- Variables with names suggesting one purpose but types implying another
+- An abstraction layer so over-engineered it required abstractions for the abstractions
+
+**The worst?** The code compiled. Tests passed. It looked professional.
+
+But it was subtly, insidiously wrong. The kind of wrong that slips into production and causes bugs a month later when someone tries to extend it.
+
+I spent more time fixing "functional" AI code than I would have spent writing it correctly from scratch.
+
+This was my lowest point. **"Is this actually saving time? Or am I just creating technical debt at AI speed?"**
+
+### October 17: The Code Review Apocalypse
+
+**I was generating code faster than the team could review it.**
+
+Monday morning standup:
+
+- "I have 3 PRs ready for review"
+- "Each PR changes 50-70 files"
+- "They're all blocked waiting for review"
+
+The team couldn't keep up. PRs were piling up like snow in a storm.
+
+**Small frequent PRs?** Became blocking. Everyone spent the day doing code reviews instead of writing code.
+
+**Large infrequent PRs?** Unreadable. "Can you review these 80 file changes?" Guaranteed team hatred.
+
+The irony: the AI had made me so fast I'd become the team's bottleneck.
+
+We needed a new strategy. Nested feature branches? Parallel development flows? Better separation of concerns so PRs could be reviewed independently?
+
+All of the above, probably.
+
+## Late October: The Orchestration Revelation
+
+### October 22: The Five-Step Salvation
+
+After several weeks of chaos, the pattern finally crystallized. Every successful migration followed the same five steps:
+
+1. **Define precise scope** (not "migrate auth" but "migrate JWT refresh token handling with Redis fallback")
+2. **Understand it completely** (actually read the legacy code, don't just skim it)
+3. **AI plans in PLAN mode** (get the strategy before any code)
+4. **Validate everything** (AI makes good suggestions and terrible assumptions)
+5. **Generate with supervision** (auto-accept always off, review every change)
+
+Simple. Obvious in hindsight. But it took a month of mistakes to learn.
+
+### October 23: The Slash Command Breakthrough
+
+Late night coding session. Wait, what's this?
+
+**Claude Code can trigger slash commands itself in sub-agents.**
+
+My brain immediately went: "What if I orchestrated multiple AI agents?"
+
+At 2 AM, I had a working prototype:
+
+- `/scout-explorer` � multiple agents analyze the codebase in parallel via Claude, Codex, and Cursor
+- `/specification-plan` � synthesize findings into a cohesive spec
+- `/build-prd` � generate a detailed implementation plan
+
+**First test:**
+
+- Analysis time: 3x longer than manual prompting
+- Quality: Significantly better
+- PRD completeness: Actually complete
+
+I was onto something.
+
+### October 24: When the Magic Stops Working
+
+**The problem:** The orchestrator was fragile. It worked when everything went right. When something went wrong AI not following instructions, token limit, ambiguous prompt it collapsed.
+
+Complex prompts to Codex via CLI tools? Unreliable.
+Multi-step multi-agent coordination? Works 1 time in 3.
+Depending on Claude Code to handle orchestration? Not possible.
+
+The "set it and forget it" automation dream died that day.
+
+I needed something more stable. Something I controlled. Something that wouldn't randomly decide to interpret my instructions creatively.
+
+---
+
+## November: When It Finally Clicks
+
+### November 2: Building My Own Tool
+
+Enough. No more depending on AI whims for orchestration. Time to build something reliable.
+
+In one evening, I built a CLI that orchestrates the entire analysis workflow. Not smart. Not fancy. Just reliable.
+
+**The flow:**
+
+```
+$ migration-cli analyze
+
+� "Which repositories?"  [interactive prompt]
+� "Which AI models?"    [Claude Sonnet, Claude Haiku, Codex GPT5, Cursor Composer1 - multiple choice]
+� "Task description?" [specific, not vague]
+� "Entry points?"     [where to start analysis]
+� "Scope?"           [what's included, what's not]
+
+[CLI runs in background]
+� Clones relevant legacy repos
+� Launches chosen models in parallel
+� Each analyzes independently
+� Merges results into cohesive analysis
+� Generates PRD
+� Breaks down into atomic tasks
+� Parallel review of each task
+� Generates test suite
+
+Done.
+```
+
+**First run**: 15 minutes of analysis, complete PRD, zero hallucinations that slipped through.
+
+**Second run**: Same quality.
+
+**Tenth run**: Still consistent.
+
+Finally. Repeatability.
+
+### November 3: The Context Window Revelation
+
+**AI quality collapses after ~60% context window usage.**
+
+It's not gradual. It's a cliff. At 50%? Fine. At 60%? Hallucinations.
+
+**The solution:**
+
+- Stored relevant context for the current task in a `.work-in-progress.md` file
+- Removed context-hungry MCP servers (looking at you, Atlassian eating 18% of context just by existing)
+
+**The result:** Migrations could run as long as needed without quality degradation.
+
+### November 4: After Analysis, Code
+
+The missing piece: standardized prompts.
+
+I created three instruction files:
+
+- `01_plan.md` - How to analyze and plan
+- `02_code.md` - How to implement (with specific code style rules)
+- `03_review.md` - How to review for common errors
+
+Every task now starts the same way:
+
+1. Read the task and PRD and follow instructions from `01_plan.md`
+2. Human review of the plan
+3. Start implementation in pair programming with AI via `02_code.md` instructions
+
+Added `.work-in-progress.md` to track current task state. When context gets heavy? Clear everything except the WIP file. Fresh context, no lost progress.
+
+**The rule that changed everything:** Clear AI context religiously.
+
+Don't let conversations grow. Don't let context windows fill. Start fresh frequently with only essential information.
+
+It seemed wasteful at first. "But I just explained the architecture!"
+
+Then I realized: explaining architecture to fresh context takes 2 minutes. Debugging hallucinations from bloated context takes 2 hours.
+
+Easy choice.
+
+---
+
+## The Final Workflow: What Actually Works
+
+November 6. Seven weeks in. The workflow finally crystallized into something repeatable and reliable.
+
+### Phase 1: Analysis & PRD (The Foundation)
+
+**Launch the CLI** for complete analysis:
+
+- Multiple AI models work in parallel
+- Cross-validation of findings
+- Detailed PRD generation
+- Breakdown into atomic tasks
+
+**Then stop and validate.**
+
+Don't trust blindly. Spend time reviewing:
+
+- Does this PRD match reality?
+- Are these tasks truly atomic?
+- What edge cases did the AI miss?
+- Where are the hidden dependencies?
+
+Fix what's wrong. Approve what's right. Copy to the new codebase.
+
+**Time cost**: 45 minutes.
+
+**Value**: Avoids weeks of bad assumptions.
+
+### Phase 2: Implementation (The Part You Can't Rush)
+
+**For each task, follow these steps religiously:**
+
+**1. Read the legacy code yourself**
+
+Not optional. Not "the AI will handle it." You read it. You understand it. Then you guide the AI.
+
+AI without your understanding = hallucinations.
+AI with your understanding = productivity.
+
+**2. Generate the plan** with `01_plan.md`
+
+Let the AI propose the approach. Reference the PRD. Reference the task. Let it think through implementation.
+
+Then review every assumption and steer the AI at the slightest deviation.
+
+**3. If you're starting a new feature: Code the architecture yourself**
+
+This is critical. Don't let the AI design your architecture.
+
+The AI will create something that works in isolation but doesn't integrate with your system. It will add abstractions you don't need. It will make choices that seem good now but hurt later.
+
+**30 minutes of manual architecture work saves 3 hours of refactoring.**
+
+**4. Let the AI implement the details** with `02_code.md`
+
+Now the AI shines. The architecture exists. The patterns are clear. Let it generate the implementation.
+
+But keep auto-accept OFF.
+
+Review every file. Question anything that looks "clever." The AI loves being clever. But you need code that's boring and maintainable.
+
+This part is tedious. You'll review dozens of files. You'll reject changes that work but don't integrate.
+
+Do it anyway. This is where architectural drift is caught.
+
+**5. AI reviews its own work** with `03_review.md`
+
+The AI catches different errors than humans. Use it.
+
+**6. Retrospective**
+
+Did the AI make the same mistake three times? Update your prompts. Teach it your ORM patterns. Document your team's conventions. Make the prompts smarter.
+
+**The workflow isn't fast. But it's consistent.**
+
+Every feature follows the same process. Every task receives the same scrutiny. Quality stays high even as velocity increases.
+
+---
+
+## The Hard-Won Lessons
+
+After seven weeks, dozens of tasks, and countless mistakes, here's what I learned about AI-assisted development at large codebase scale.
+
+### What AI Actually Excels At
+
+**Exploring large codebases** - AI can read thousands of lines faster than any human. Point it at a complex module and ask "what does this do?" Genuinely useful.
+
+**Pattern recognition** - When properly guided, AI spots patterns you'd miss. It sees the same error handling approach repeated in 20 files while you're still on file 3.
+
+**Multi-model analysis** - Different models catch different issues. Like code review with multiple devs, each brings a different perspective.
+
+### What AI Consistently Fails At
+
+**Making architectural decisions** - AI will confidently design elaborate systems that work in isolation but don't integrate with your codebase. Every time you let AI decide architecture, you create refactoring work for later.
+
+**Maintaining consistency** - Across multiple files, AI drifts. File 1 uses one pattern. File 5 uses a different pattern. File 10 invents a third pattern. You have to catch this.
+
+**Managing its own context** - After 60% context usage, quality collapses. The AI doesn't know this. It will continue confidently generating garbage.
+
+**Refactoring without breaking things** - Ask AI to "improve" code and watch it create technical debt at impressive speed. It will add abstractions you don't need and remove patterns you depend on.
+
+### The Four Rules That Really Matter
+
+**1. Context Management Is Everything**
+
+AI quality has a hard limit at ~60% context usage. Respect this limit or pay the price in hallucinations.
+
+Solutions:
+
+- Clear context frequently
+- Start new conversations often
+- Remove context-hungry MCP servers
+- Use work-in-progress files to track state between sessions
+
+**2. Human Understanding Is Non-Negotiable**
+
+You cannot outsource understanding to AI. Period.
+
+AI amplifies what you know. It doesn't replace knowing things. Every time I tried to skip understanding the legacy code, I paid for it later in debugging time.
+
+**3. Structure Beats Intelligence**
+
+Ad-hoc prompting produces inconsistent results. Standardized workflows produce reliable results.
+
+Build templates. Create checklists. Document your process. Make it boring and repeatable.
+
+**4. You're the Architect**
+
+AI is a talented junior dev who writes clean code but makes questionable design decisions.
+
+You design the architecture. AI implements the details. Reverse this and you'll hate your codebase in three months.
+
+## Let's Talk About Time
+
+Everyone wants to know: "Does AI actually save time?"
+
+The answer isn't simple. Here's the real breakdown:
+
+| Phase                            | Time Investment                            |
+| -------------------------------- | ------------------------------------------ |
+| **Initial "Full AI" attempts**   | Days of wasted effort                      |
+| **Workflow refinement**          | ~7 weeks of experimentation                |
+| **Current workflow per feature** | 25 min planning + 2-3 hours implementation |
+| **Manual corrections**           | Significantly reduced but still necessary  |
+| **Tool development (CLI)**       | Upfront cost, ongoing productivity gains   |
+
+**The brutal truth?**
+
+Week 1: AI was slower than manual work.
+
+Week 2: AI was as fast as manual work.
+
+Week 4: AI is 4x faster than manual work.
+
+**Is it worth it?**
+
+For this type of complex migration: **Yes.**
+
+**Faster codebase exploration** - AI reads thousands of lines while I grab coffee. This is genuinely valuable.
+
+**Reduced boilerplate** - Writing the 15th CRUD endpoint myself would be soul-crushing. AI does it in seconds.
+
+**Multi-model analysis** - Three AI models analyzing in parallel would cost three junior devs. I run it on my laptop.
+
+**Standardized breakdown** - AI generates detailed task lists that would take me hours.
+
+But here's what the "AI will 10x your productivity" crowd won't tell you:
+
+**You still review everything.** Every line. Every file. Every architectural decision.
+
+**You still write the architecture.** AI can't design your system. Only implement it.
+
+**You still debug weird stuff.** AI-generated bugs are often more subtle than bugs you'd write yourself.
+
+The productivity gain is real. But it's more like 2.5-4x for careful developers, not 10x.
+
+## If You're About To Do This: Read This First
+
+Planning a similar migration? Learn from my mistakes.
+
+### The Seven Rules For AI-Assisted Migration
+
+**1. Don't start with autonomous AI**
+
+I know it's tempting. "Just let the AI handle it!"
+
+Don't. You'll waste days fixing hallucinations that looked correct at first glance.
+
+Start with tight supervision. Gradually loosen as you learn what AI succeeds at and where it fails.
+
+**2. Invest in tooling upfront**
+
+The evening I spent building the CLI paid for itself within a week.
+
+Custom tooling seems like overhead until you run your tenth feature migration and everything just works.
+
+**3. Multiple models > Single model**
+
+Different AI models catch different errors. Run them in parallel. Cross-validate findings.
+
+Yes, it costs more. It also catches hallucinations before they reach production.
+
+**4. Auto-accept is a trap**
+
+Watching the AI commit changes while you grab coffee seems productive.
+
+It's not. It's gambling with your codebase.
+
+Review. Every. Change.
+
+**5. You design the architecture**
+
+30 minutes of manual architecture work saves 3 hours of refactoring AI-generated abstractions that don't integrate with your system.
+
+**6. Clear context like your code quality depends on it**
+
+Because it does.
+
+After 60% context usage, AI quality collapses. Start fresh frequently.
+
+**7. Standardize everything**
+
+Create prompt templates. Build checklists. Document the workflow.
+
+Consistency beats intelligence when you're migrating dozens of features.
+
+### The Code Review Crisis
+
+Warning: you'll generate code faster than your team can review it.
+
+This creates a new bottleneck. Solutions that worked for us:
+
+**Nested branch strategies** - Don't wait for PR approval to start the next feature. Branch from your branch.
+
+**Smaller, atomic PRs** - 50 files is too much. 5-8 is manageable.
+
+**Heavy test coverage** - Automated tests reduce review burden. If tests pass, reviewer focuses on architecture.
+
+**Scheduled review sessions** - Block hour-long windows for deep review work. Quick 15-minute reviews miss subtle issues.
+
+### When To Skip This Entire Approach
+
+This workflow makes sense for complex migrations. It's overkill for:
+
+**Small projects** - Just use Cursor and move fast.
+
+**Prototypes** - Who cares about architecture? Ship and iterate.
+
+**Learning new tech** - Understand it yourself first. AI later.
+
+**Simple CRUD apps** - Standard patterns, no complexity, AI shines without all this structure.
+
+Save the structured workflow for problems that truly need it.
+
+## What's Next: The Evolving Landscape
+
+Seven weeks isn't long in technology years. The tools are already improving:
+
+**Cursor** improves significantly with each release. What struggled in September works smoothly in November.
+
+**Claude Code** continues to extend context windows and improve orchestration. The limits I hit today might be gone next month.
+
+**Custom tooling** becomes more sophisticated. The CLI I built in a weekend now has features I didn't know I needed.
+
+**Composer1 and Gemini3** were released in the meantime and are very promising.
+
+Here's the thing: **the best approach isn't to pick one tool.**
+
+It's to build a workflow that leverages each tool's strengths:
+
+- **Cursor** for fast implementation when you know exactly what you want
+- **Claude** for analysis and planning when you need to understand something complex
+- **Codex** for pattern discovery when exploring unfamiliar code
+- **Custom CLI** for orchestration when you need reliability over flexibility
+
+The tools will continue improving. The workflow principles won't change:
+
+- Understand before generating
+- Review before accepting
+- Design before implementing
+- Structure beats ad-hoc prompting
+
+## The Conclusion
+
+Here's what no one selling AI tools wants to admit:
+
+**AI doesn't replace developers. It changes what we spend our time on.**
+
+Before AI: I spent 50% of my time reading legacy code, 10% thinking about architecture, and 40% writing code.
+
+With AI: I spend 10% writing code, 60% reviewing AI output and making architectural decisions, and 30% reading legacy code.
+
+The total hours? 2-4x faster than before.
+
+The difference? I'm no longer writing boilerplate. I'm not implementing the fifteenth CRUD endpoint by hand. I'm not typing repetitive test cases.
+
+Instead, I:
+
+- Design systems
+- Review implementation
+- Catch subtle bugs
+- Make strategic decisions
+
+**It's actually... better?**
+
+Writing boilerplate was never the fun part. Designing elegant systems? That's why I got into this field.
+
+AI handles the boring parts. I handle the interesting parts.
+
+After seven weeks and dozens of migrated tasks, this division of labor finally feels right.
+
+## In Summary
+
+**AI-assisted development at scale requires more structure, not less.**
+
+You can't just point AI at a problem and hope for the best. You need:
+
+- Tight human supervision
+- Aggressive context management
+- Standardized workflows
+- Custom tooling for your specific use case
+
+Build the structure. Learn the tools. Understand their limits. Review everything.
+
+Do this, and you'll see real 2-4x productivity gains on complex work.
+
+Skip these steps, and you'll spend more time debugging hallucinations than you would have spent writing the code manually.
+
+**The future of development isn't autonomous AI.**
+
+It's developers who master the art of directing AI effectively within well-structured workflows. That's where the real productivity gains live.
+
+And honestly? That future is already here. You just need to be willing to do the work to get there.
+
+---
+
+_Seven weeks in, dozens of tasks migrated, and the workflow finally feels productive. Not magic. Not autonomous. Just... productive. Sometimes that's enough._

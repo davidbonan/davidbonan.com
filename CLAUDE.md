@@ -41,12 +41,14 @@ The site uses Contentlayer to manage two main content types:
 - Schema: Post (title, date, category, image, description, timeToRead)
 - URL pattern: `/blog/[slug]`
 - Categories supported with filtering at `/blog/categories/[categorySlug]`
+- Helper functions: `getAllCategories()` returns categories sorted by frequency
 
 ### Case Studies
 - Location: `src/content/work/`
-- Schema: CaseStudy (title, subtitle, date, tags, thumbnail, coverImage, projectURL, client, testimonial)
+- Schema: CaseStudy (title, subtitle, date, tags, thumbnail, coverImage, images, projectURL, description, projectDuration, client, testimonial)
 - URL pattern: `/work/[slug]`
 - Tags supported with filtering at `/work/categories/[tagSlug]`
+- Helper functions: `getAllTags()` for all tags sorted by frequency, `getFeaturedTags()` for top 4 tags
 
 ## File Structure Key Points
 
@@ -58,8 +60,9 @@ The site uses Contentlayer to manage two main content types:
 ## Content Generation
 
 - Contentlayer automatically generates TypeScript types and processes MDX
-- RSS feeds are generated via `rss.js` script using the Feed library
+- RSS feeds are generated via `rss.js` script using the Feed library (outputs rss.xml, rss.json, and atom.xml to `public/`)
 - All content includes computed fields for URL and slug generation
+- MDX processing uses `remark-gfm` for GitHub Flavored Markdown and `rehype-prism` for syntax highlighting
 
 ## Build Process
 

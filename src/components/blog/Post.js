@@ -1,4 +1,5 @@
 import { format, parseISO } from 'date-fns'
+import { enUS, fr } from 'date-fns/locale'
 import Image from 'next/image'
 import Link from 'next/link'
 import {
@@ -15,7 +16,23 @@ const iconOptions = {
   Tutorials: TutorialIcon,
 }
 
-export function Post({ post }) {
+const dateLocales = {
+  en: enUS,
+  fr: fr,
+}
+
+const translations = {
+  en: {
+    minuteRead: 'minute read',
+  },
+  fr: {
+    minuteRead: 'minute de lecture',
+  },
+}
+
+export function Post({ post, locale = 'en' }) {
+  const t = translations[locale]
+  const dateLocale = dateLocales[locale]
   const categorySlug = post.category.replace(/ /g, '-').toLowerCase()
   const CategoryIcon = iconOptions[post.category]
 
@@ -39,7 +56,7 @@ export function Post({ post }) {
 
       <div className="group relative flex flex-1 flex-col px-5 pb-10 pt-8 xl:px-7">
         <Link
-          href={`/blog/categories/${categorySlug}`}
+          href={`/${locale}/blog/categories/${categorySlug}`}
           className="group relative z-10 flex items-center gap-2.5 text-md  text-sky-700 transition duration-200 ease-in-out hover:text-sky-600"
         >
           <CategoryIcon className="h-4 w-4 text-sky-600" />
@@ -73,7 +90,9 @@ export function Post({ post }) {
               />
             </svg>
             <time dateTime={post.date}>
-              {format(parseISO(post.date), 'LLL d, yyyy')}
+              {format(parseISO(post.date), 'LLL d, yyyy', {
+                locale: dateLocale,
+              })}
             </time>
           </span>
           <span className="flex items-center gap-1.5">
@@ -91,7 +110,7 @@ export function Post({ post }) {
                 d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            {`${post.timeToRead} minute read`}
+            {`${post.timeToRead} ${t.minuteRead}`}
           </span>
         </div>
       </div>

@@ -1,13 +1,24 @@
 import { compareDesc } from 'date-fns'
 import { Post } from './Post'
 
-export async function BlogGrid({ posts, featured = false }) {
+const translations = {
+  en: {
+    readLatest: 'Read the latest',
+  },
+  fr: {
+    readLatest: 'Lire les derniers',
+  },
+}
+
+export async function BlogGrid({ posts, featured = false, locale = 'en' }) {
+  const t = translations[locale]
+
   return (
     <div className="relative mx-auto mt-14 grid max-w-lg gap-8 sm:mt-16 md:mx-0 md:max-w-none md:grid-cols-2 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-6 xl:gap-x-6 xl:gap-y-8">
       {featured && (
         <div className="absolute -top-20 hidden gap-6 lg:-left-4 xl:flex 2xl:-left-24">
           <span className="inline-block -rotate-12 transform font-writing text-2xl tracking-wide text-slate-600">
-            Read the latest
+            {t.readLatest}
           </span>
 
           <svg
@@ -28,7 +39,7 @@ export async function BlogGrid({ posts, featured = false }) {
       {posts
         .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
         .map((post) => (
-          <Post key={post.slug} post={post} />
+          <Post key={post.slug} post={post} locale={locale} />
         ))}
     </div>
   )
