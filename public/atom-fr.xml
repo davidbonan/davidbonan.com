@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://davidbonan.io</id>
     <title>David Bonan | Blog (Français)</title>
-    <updated>2025-11-15T21:40:37.400Z</updated>
+    <updated>2025-11-19T08:53:08.444Z</updated>
     <generator>Feed for developer</generator>
     <link rel="alternate" href="https://davidbonan.io"/>
     <link rel="self" href="https://davidbonan.io/atom-fr.xml"/>
@@ -11,131 +11,11 @@
     <icon>https://davidbonan.io/favicon.ico</icon>
     <rights>All rights reserved 2025, David Bonan</rights>
     <entry>
-        <title type="html"><![CDATA[Migration Legacy Assistée par IA : Deux Mois d'Enseignements Concrets]]></title>
+        <title type="html"><![CDATA[Migration Legacy Assistée par IA : Retour d'expérience]]></title>
         <id>https://davidbonan.io/fr/blog/ai-assisted-legacy-migration-lessons-learned</id>
         <link href="https://davidbonan.io/fr/blog/ai-assisted-legacy-migration-lessons-learned"/>
         <updated>2025-11-14T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Une rétrospective sincère de l'utilisation intensive des outils IA pour une migration de codebase à grande échelle, des échecs initiaux à un workflow qui fonctionne réellement.]]></summary>
-        <author>
-            <name>David Bonan</name>
-            <email>contact@davidbonan.com</email>
-            <uri>https://davidbonan.io</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Améliorer les Performances avec les Web Workers]]></title>
-        <id>https://davidbonan.io/fr/blog/boosting-performance-with-web-workers</id>
-        <link href="https://davidbonan.io/fr/blog/boosting-performance-with-web-workers"/>
-        <updated>2024-11-25T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Découvrez comment tirer parti des Web Workers pour exécuter des tâches intensives en CPU sans bloquer le thread principal dans les applications JavaScript.]]></summary>
-        <author>
-            <name>David Bonan</name>
-            <email>contact@davidbonan.com</email>
-            <uri>https://davidbonan.io</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Développer une Application Mobile avec l'IA : Du Concept à l'App Store]]></title>
-        <id>https://davidbonan.io/fr/blog/building-mobile-app-with-ai-a-journey</id>
-        <link href="https://davidbonan.io/fr/blog/building-mobile-app-with-ai-a-journey"/>
-        <updated>2025-01-31T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Une expérience concrète d'utilisation d'outils IA comme Cursor et Claude pour développer une application mobile from scratch, mettant en lumière les avantages et les défis.]]></summary>
-        <author>
-            <name>David Bonan</name>
-            <email>contact@davidbonan.com</email>
-            <uri>https://davidbonan.io</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Claude Code vs Cursor : Duel dans un Monorepo]]></title>
-        <id>https://davidbonan.io/fr/blog/claude-code-vs-cursor-monorepo-showdown</id>
-        <link href="https://davidbonan.io/fr/blog/claude-code-vs-cursor-monorepo-showdown"/>
-        <updated>2025-08-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Une comparaison concrète de Claude Code et Cursor lors du développement de fonctionnalités complexes dans un grand monorepo, explorant leurs forces et limitations.]]></summary>
-        <author>
-            <name>David Bonan</name>
-            <email>contact@davidbonan.com</email>
-            <uri>https://davidbonan.io</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Déboguer les Requêtes SQL Server Lentes : Guide Pratique pour Développeurs]]></title>
-        <id>https://davidbonan.io/fr/blog/debugging-slow-sql-server-queries-practical-guide</id>
-        <link href="https://davidbonan.io/fr/blog/debugging-slow-sql-server-queries-practical-guide"/>
-        <updated>2025-07-31T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Apprenez à identifier et optimiser systématiquement les requêtes SQL Server lentes en utilisant les plans d'exécution, les outils de profilage et des techniques éprouvées.]]></summary>
-        <author>
-            <name>David Bonan</name>
-            <email>contact@davidbonan.com</email>
-            <uri>https://davidbonan.io</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Revues de Code Efficaces : Au-Delà du Pinaillage]]></title>
-        <id>https://davidbonan.io/fr/blog/effective-code-reviews-beyond-nitpicking</id>
-        <link href="https://davidbonan.io/fr/blog/effective-code-reviews-beyond-nitpicking"/>
-        <updated>2025-03-25T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Transformez votre processus de revue de code d'un goulot d'étranglement en une pratique d'équipe précieuse qui améliore la qualité du code et le partage des connaissances.]]></summary>
-        <author>
-            <name>David Bonan</name>
-            <email>contact@davidbonan.com</email>
-            <uri>https://davidbonan.io</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Exploiter les types avancés de TypeScript : usages pratiques au-delà des bases]]></title>
-        <id>https://davidbonan.io/fr/blog/leveraging-typescript-advanced-types-practical-uses</id>
-        <link href="https://davidbonan.io/fr/blog/leveraging-typescript-advanced-types-practical-uses"/>
-        <updated>2025-03-22T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Comment utiliser les fonctionnalités avancées du système de types de TypeScript pour résoudre des problèmes concrets et créer des bases de code plus maintenables.]]></summary>
-        <author>
-            <name>David Bonan</name>
-            <email>contact@davidbonan.com</email>
-            <uri>https://davidbonan.io</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Maîtriser les Structures de Données JavaScript : Au-Delà des Arrays]]></title>
-        <id>https://davidbonan.io/fr/blog/mastering-javascript-data-structures-beyond-arrays</id>
-        <link href="https://davidbonan.io/fr/blog/mastering-javascript-data-structures-beyond-arrays"/>
-        <updated>2024-11-15T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Découvrez comment choisir la bonne structure de données en JavaScript peut significativement améliorer les performances et la lisibilité de votre code.]]></summary>
-        <author>
-            <name>David Bonan</name>
-            <email>contact@davidbonan.com</email>
-            <uri>https://davidbonan.io</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Optimisation des performances React : Guide pratique]]></title>
-        <id>https://davidbonan.io/fr/blog/optimizing-react-performance-practical-guide</id>
-        <link href="https://davidbonan.io/fr/blog/optimizing-react-performance-practical-guide"/>
-        <updated>2025-03-24T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Apprenez des techniques pratiques pour identifier et résoudre les goulots d'étranglement de performance dans vos applications React.]]></summary>
-        <author>
-            <name>David Bonan</name>
-            <email>contact@davidbonan.com</email>
-            <uri>https://davidbonan.io</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Résoudre la Complexité N² avec les Maps JavaScript]]></title>
-        <id>https://davidbonan.io/fr/blog/solving-n2-complexity-with-javascript-maps</id>
-        <link href="https://davidbonan.io/fr/blog/solving-n2-complexity-with-javascript-maps"/>
-        <updated>2024-11-20T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Apprenez à transformer des boucles imbriquées inefficaces en solutions performantes en utilisant les Maps JavaScript.]]></summary>
-        <author>
-            <name>David Bonan</name>
-            <email>contact@davidbonan.com</email>
-            <uri>https://davidbonan.io</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Pourquoi les Tests Unitaires Peuvent Nuire à Votre Codebase et Empêcher le Refactoring]]></title>
-        <id>https://davidbonan.io/fr/blog/why-unit-tests-can-harm-your-codebase</id>
-        <link href="https://davidbonan.io/fr/blog/why-unit-tests-can-harm-your-codebase"/>
-        <updated>2024-11-15T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Découvrez pourquoi sur-tester les méthodes intermédiaires peut mener à un code rigide et comment prendre de meilleures décisions sur ce qu'il faut tester.]]></summary>
+        <summary type="html"><![CDATA[Une rétrospective de l'utilisation intensive des outils IA pour une migration d'une large codebase, des échecs initiaux à un workflow qui fonctionne réellement.]]></summary>
         <author>
             <name>David Bonan</name>
             <email>contact@davidbonan.com</email>

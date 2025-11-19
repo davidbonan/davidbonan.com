@@ -4,7 +4,7 @@
         <title>David Bonan | Blog</title>
         <link>https://davidbonan.io</link>
         <description>David Bonan - Senior developer, entrepreneur, and general technology enthusiast</description>
-        <lastBuildDate>Sat, 15 Nov 2025 21:40:37 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 19 Nov 2025 08:53:08 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for developer</generator>
         <image>
@@ -14,11 +14,11 @@
         </image>
         <copyright>All rights reserved 2025, David Bonan</copyright>
         <item>
-            <title><![CDATA[AI-Assisted Legacy Migration: Two Months of Real-World Lessons]]></title>
+            <title><![CDATA[AI-Assisted Legacy Migration: Lessons Learned]]></title>
             <link>https://davidbonan.io/en/blog/ai-assisted-legacy-migration-lessons-learned</link>
             <guid>https://davidbonan.io/en/blog/ai-assisted-legacy-migration-lessons-learned</guid>
             <pubDate>Fri, 14 Nov 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[A candid retrospective of using AI tools intensively for a large-scale codebase migration, from initial failures to a refined workflow that actually works.]]></description>
+            <description><![CDATA[A retrospective on using AI tools intensively for a large codebase migration, from initial failures to a workflow that actually works.]]></description>
             <author>contact@davidbonan.com (David Bonan)</author>
         </item>
         <item>
@@ -102,91 +102,11 @@
             <author>contact@davidbonan.com (David Bonan)</author>
         </item>
         <item>
-            <title><![CDATA[Migration Legacy Assistée par IA : Deux Mois d'Enseignements Concrets]]></title>
+            <title><![CDATA[Migration Legacy Assistée par IA : Retour d'expérience]]></title>
             <link>https://davidbonan.io/fr/blog/ai-assisted-legacy-migration-lessons-learned</link>
             <guid>https://davidbonan.io/fr/blog/ai-assisted-legacy-migration-lessons-learned</guid>
             <pubDate>Fri, 14 Nov 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[Une rétrospective sincère de l'utilisation intensive des outils IA pour une migration de codebase à grande échelle, des échecs initiaux à un workflow qui fonctionne réellement.]]></description>
-            <author>contact@davidbonan.com (David Bonan)</author>
-        </item>
-        <item>
-            <title><![CDATA[Améliorer les Performances avec les Web Workers]]></title>
-            <link>https://davidbonan.io/fr/blog/boosting-performance-with-web-workers</link>
-            <guid>https://davidbonan.io/fr/blog/boosting-performance-with-web-workers</guid>
-            <pubDate>Mon, 25 Nov 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[Découvrez comment tirer parti des Web Workers pour exécuter des tâches intensives en CPU sans bloquer le thread principal dans les applications JavaScript.]]></description>
-            <author>contact@davidbonan.com (David Bonan)</author>
-        </item>
-        <item>
-            <title><![CDATA[Développer une Application Mobile avec l'IA : Du Concept à l'App Store]]></title>
-            <link>https://davidbonan.io/fr/blog/building-mobile-app-with-ai-a-journey</link>
-            <guid>https://davidbonan.io/fr/blog/building-mobile-app-with-ai-a-journey</guid>
-            <pubDate>Fri, 31 Jan 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[Une expérience concrète d'utilisation d'outils IA comme Cursor et Claude pour développer une application mobile from scratch, mettant en lumière les avantages et les défis.]]></description>
-            <author>contact@davidbonan.com (David Bonan)</author>
-        </item>
-        <item>
-            <title><![CDATA[Claude Code vs Cursor : Duel dans un Monorepo]]></title>
-            <link>https://davidbonan.io/fr/blog/claude-code-vs-cursor-monorepo-showdown</link>
-            <guid>https://davidbonan.io/fr/blog/claude-code-vs-cursor-monorepo-showdown</guid>
-            <pubDate>Fri, 01 Aug 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[Une comparaison concrète de Claude Code et Cursor lors du développement de fonctionnalités complexes dans un grand monorepo, explorant leurs forces et limitations.]]></description>
-            <author>contact@davidbonan.com (David Bonan)</author>
-        </item>
-        <item>
-            <title><![CDATA[Déboguer les Requêtes SQL Server Lentes : Guide Pratique pour Développeurs]]></title>
-            <link>https://davidbonan.io/fr/blog/debugging-slow-sql-server-queries-practical-guide</link>
-            <guid>https://davidbonan.io/fr/blog/debugging-slow-sql-server-queries-practical-guide</guid>
-            <pubDate>Thu, 31 Jul 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[Apprenez à identifier et optimiser systématiquement les requêtes SQL Server lentes en utilisant les plans d'exécution, les outils de profilage et des techniques éprouvées.]]></description>
-            <author>contact@davidbonan.com (David Bonan)</author>
-        </item>
-        <item>
-            <title><![CDATA[Revues de Code Efficaces : Au-Delà du Pinaillage]]></title>
-            <link>https://davidbonan.io/fr/blog/effective-code-reviews-beyond-nitpicking</link>
-            <guid>https://davidbonan.io/fr/blog/effective-code-reviews-beyond-nitpicking</guid>
-            <pubDate>Tue, 25 Mar 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[Transformez votre processus de revue de code d'un goulot d'étranglement en une pratique d'équipe précieuse qui améliore la qualité du code et le partage des connaissances.]]></description>
-            <author>contact@davidbonan.com (David Bonan)</author>
-        </item>
-        <item>
-            <title><![CDATA[Exploiter les types avancés de TypeScript : usages pratiques au-delà des bases]]></title>
-            <link>https://davidbonan.io/fr/blog/leveraging-typescript-advanced-types-practical-uses</link>
-            <guid>https://davidbonan.io/fr/blog/leveraging-typescript-advanced-types-practical-uses</guid>
-            <pubDate>Sat, 22 Mar 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[Comment utiliser les fonctionnalités avancées du système de types de TypeScript pour résoudre des problèmes concrets et créer des bases de code plus maintenables.]]></description>
-            <author>contact@davidbonan.com (David Bonan)</author>
-        </item>
-        <item>
-            <title><![CDATA[Maîtriser les Structures de Données JavaScript : Au-Delà des Arrays]]></title>
-            <link>https://davidbonan.io/fr/blog/mastering-javascript-data-structures-beyond-arrays</link>
-            <guid>https://davidbonan.io/fr/blog/mastering-javascript-data-structures-beyond-arrays</guid>
-            <pubDate>Fri, 15 Nov 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[Découvrez comment choisir la bonne structure de données en JavaScript peut significativement améliorer les performances et la lisibilité de votre code.]]></description>
-            <author>contact@davidbonan.com (David Bonan)</author>
-        </item>
-        <item>
-            <title><![CDATA[Optimisation des performances React : Guide pratique]]></title>
-            <link>https://davidbonan.io/fr/blog/optimizing-react-performance-practical-guide</link>
-            <guid>https://davidbonan.io/fr/blog/optimizing-react-performance-practical-guide</guid>
-            <pubDate>Mon, 24 Mar 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[Apprenez des techniques pratiques pour identifier et résoudre les goulots d'étranglement de performance dans vos applications React.]]></description>
-            <author>contact@davidbonan.com (David Bonan)</author>
-        </item>
-        <item>
-            <title><![CDATA[Résoudre la Complexité N² avec les Maps JavaScript]]></title>
-            <link>https://davidbonan.io/fr/blog/solving-n2-complexity-with-javascript-maps</link>
-            <guid>https://davidbonan.io/fr/blog/solving-n2-complexity-with-javascript-maps</guid>
-            <pubDate>Wed, 20 Nov 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[Apprenez à transformer des boucles imbriquées inefficaces en solutions performantes en utilisant les Maps JavaScript.]]></description>
-            <author>contact@davidbonan.com (David Bonan)</author>
-        </item>
-        <item>
-            <title><![CDATA[Pourquoi les Tests Unitaires Peuvent Nuire à Votre Codebase et Empêcher le Refactoring]]></title>
-            <link>https://davidbonan.io/fr/blog/why-unit-tests-can-harm-your-codebase</link>
-            <guid>https://davidbonan.io/fr/blog/why-unit-tests-can-harm-your-codebase</guid>
-            <pubDate>Fri, 15 Nov 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[Découvrez pourquoi sur-tester les méthodes intermédiaires peut mener à un code rigide et comment prendre de meilleures décisions sur ce qu'il faut tester.]]></description>
+            <description><![CDATA[Une rétrospective de l'utilisation intensive des outils IA pour une migration d'une large codebase, des échecs initiaux à un workflow qui fonctionne réellement.]]></description>
             <author>contact@davidbonan.com (David Bonan)</author>
         </item>
     </channel>

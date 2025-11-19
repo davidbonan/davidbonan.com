@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://davidbonan.io</id>
     <title>David Bonan | Blog (English)</title>
-    <updated>2025-11-15T21:40:37.399Z</updated>
+    <updated>2025-11-19T08:53:08.442Z</updated>
     <generator>Feed for developer</generator>
     <link rel="alternate" href="https://davidbonan.io"/>
     <link rel="self" href="https://davidbonan.io/atom-en.xml"/>
@@ -11,11 +11,11 @@
     <icon>https://davidbonan.io/favicon.ico</icon>
     <rights>All rights reserved 2025, David Bonan</rights>
     <entry>
-        <title type="html"><![CDATA[AI-Assisted Legacy Migration: Two Months of Real-World Lessons]]></title>
+        <title type="html"><![CDATA[AI-Assisted Legacy Migration: Lessons Learned]]></title>
         <id>https://davidbonan.io/en/blog/ai-assisted-legacy-migration-lessons-learned</id>
         <link href="https://davidbonan.io/en/blog/ai-assisted-legacy-migration-lessons-learned"/>
         <updated>2025-11-14T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[A candid retrospective of using AI tools intensively for a large-scale codebase migration, from initial failures to a refined workflow that actually works.]]></summary>
+        <summary type="html"><![CDATA[A retrospective on using AI tools intensively for a large codebase migration, from initial failures to a workflow that actually works.]]></summary>
         <author>
             <name>David Bonan</name>
             <email>contact@davidbonan.com</email>
