@@ -18,28 +18,6 @@
             }
         },
         {
-            "id": "https://davidbonan.io/en/blog/boosting-performance-with-web-workers",
-            "url": "https://davidbonan.io/en/blog/boosting-performance-with-web-workers",
-            "title": "Boosting Performance with Web Workers",
-            "summary": "Learn how to leverage Web Workers to run CPU-intensive tasks without blocking the main thread in JavaScript applications.",
-            "date_modified": "2024-11-25T00:00:00.000Z",
-            "author": {
-                "name": "David Bonan",
-                "url": "https://davidbonan.io"
-            }
-        },
-        {
-            "id": "https://davidbonan.io/en/blog/building-mobile-app-with-ai-a-journey",
-            "url": "https://davidbonan.io/en/blog/building-mobile-app-with-ai-a-journey",
-            "title": "Building a Mobile App with AI: A Journey from Concept to App Store",
-            "summary": "A real-world experience of using AI tools like Cursor and Claude to build a mobile application from scratch, highlighting both benefits and challenges.",
-            "date_modified": "2025-01-31T00:00:00.000Z",
-            "author": {
-                "name": "David Bonan",
-                "url": "https://davidbonan.io"
-            }
-        },
-        {
             "id": "https://davidbonan.io/en/blog/claude-code-vs-cursor-monorepo-showdown",
             "url": "https://davidbonan.io/en/blog/claude-code-vs-cursor-monorepo-showdown",
             "title": "Claude Code vs Cursor: A Monorepo Showdown",
@@ -73,28 +51,6 @@
             }
         },
         {
-            "id": "https://davidbonan.io/en/blog/leveraging-typescript-advanced-types-practical-uses",
-            "url": "https://davidbonan.io/en/blog/leveraging-typescript-advanced-types-practical-uses",
-            "title": "Leveraging TypeScript Advanced Types: Practical Uses Beyond Basics",
-            "summary": "How to use TypeScript's advanced type features to solve real-world problems and create more maintainable codebases.",
-            "date_modified": "2025-03-22T00:00:00.000Z",
-            "author": {
-                "name": "David Bonan",
-                "url": "https://davidbonan.io"
-            }
-        },
-        {
-            "id": "https://davidbonan.io/en/blog/mastering-javascript-data-structures-beyond-arrays",
-            "url": "https://davidbonan.io/en/blog/mastering-javascript-data-structures-beyond-arrays",
-            "title": "Mastering JavaScript Data Structures: Beyond Arrays",
-            "summary": "Learn how choosing the right data structure in JavaScript can significantly improve your code performance and readability.",
-            "date_modified": "2024-11-15T00:00:00.000Z",
-            "author": {
-                "name": "David Bonan",
-                "url": "https://davidbonan.io"
-            }
-        },
-        {
             "id": "https://davidbonan.io/en/blog/optimizing-react-performance-practical-guide",
             "url": "https://davidbonan.io/en/blog/optimizing-react-performance-practical-guide",
             "title": "Optimizing React Performance: A Practical Guide",
@@ -106,11 +62,55 @@
             }
         },
         {
+            "id": "https://davidbonan.io/en/blog/leveraging-typescript-advanced-types-practical-uses",
+            "url": "https://davidbonan.io/en/blog/leveraging-typescript-advanced-types-practical-uses",
+            "title": "Leveraging TypeScript Advanced Types: Practical Uses Beyond Basics",
+            "summary": "How to use TypeScript's advanced type features to solve real-world problems and create more maintainable codebases.",
+            "date_modified": "2025-03-22T00:00:00.000Z",
+            "author": {
+                "name": "David Bonan",
+                "url": "https://davidbonan.io"
+            }
+        },
+        {
+            "id": "https://davidbonan.io/en/blog/building-mobile-app-with-ai-a-journey",
+            "url": "https://davidbonan.io/en/blog/building-mobile-app-with-ai-a-journey",
+            "title": "Building a Mobile App with AI: A Journey from Concept to App Store",
+            "summary": "A real-world experience of using AI tools like Cursor and Claude to build a mobile application from scratch, highlighting both benefits and challenges.",
+            "date_modified": "2025-01-31T00:00:00.000Z",
+            "author": {
+                "name": "David Bonan",
+                "url": "https://davidbonan.io"
+            }
+        },
+        {
+            "id": "https://davidbonan.io/en/blog/boosting-performance-with-web-workers",
+            "url": "https://davidbonan.io/en/blog/boosting-performance-with-web-workers",
+            "title": "Boosting Performance with Web Workers",
+            "summary": "Learn how to leverage Web Workers to run CPU-intensive tasks without blocking the main thread in JavaScript applications.",
+            "date_modified": "2024-11-25T00:00:00.000Z",
+            "author": {
+                "name": "David Bonan",
+                "url": "https://davidbonan.io"
+            }
+        },
+        {
             "id": "https://davidbonan.io/en/blog/solving-n2-complexity-with-javascript-maps",
             "url": "https://davidbonan.io/en/blog/solving-n2-complexity-with-javascript-maps",
             "title": "Solving N² Complexity with JavaScript Maps",
             "summary": "Learn how to transform inefficient nested loops into performant solutions using JavaScript Maps.",
             "date_modified": "2024-11-20T00:00:00.000Z",
+            "author": {
+                "name": "David Bonan",
+                "url": "https://davidbonan.io"
+            }
+        },
+        {
+            "id": "https://davidbonan.io/en/blog/mastering-javascript-data-structures-beyond-arrays",
+            "url": "https://davidbonan.io/en/blog/mastering-javascript-data-structures-beyond-arrays",
+            "title": "Mastering JavaScript Data Structures: Beyond Arrays",
+            "summary": "Learn how choosing the right data structure in JavaScript can significantly improve your code performance and readability.",
+            "date_modified": "2024-11-15T00:00:00.000Z",
             "author": {
                 "name": "David Bonan",
                 "url": "https://davidbonan.io"

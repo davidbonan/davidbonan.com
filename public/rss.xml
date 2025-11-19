@@ -4,7 +4,7 @@
         <title>David Bonan | Blog</title>
         <link>https://davidbonan.io</link>
         <description>David Bonan - Senior developer, entrepreneur, and general technology enthusiast</description>
-        <lastBuildDate>Wed, 19 Nov 2025 08:53:08 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 19 Nov 2025 08:59:36 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for developer</generator>
         <image>
@@ -22,19 +22,11 @@
             <author>contact@davidbonan.com (David Bonan)</author>
         </item>
         <item>
-            <title><![CDATA[Boosting Performance with Web Workers]]></title>
-            <link>https://davidbonan.io/en/blog/boosting-performance-with-web-workers</link>
-            <guid>https://davidbonan.io/en/blog/boosting-performance-with-web-workers</guid>
-            <pubDate>Mon, 25 Nov 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[Learn how to leverage Web Workers to run CPU-intensive tasks without blocking the main thread in JavaScript applications.]]></description>
-            <author>contact@davidbonan.com (David Bonan)</author>
-        </item>
-        <item>
-            <title><![CDATA[Building a Mobile App with AI: A Journey from Concept to App Store]]></title>
-            <link>https://davidbonan.io/en/blog/building-mobile-app-with-ai-a-journey</link>
-            <guid>https://davidbonan.io/en/blog/building-mobile-app-with-ai-a-journey</guid>
-            <pubDate>Fri, 31 Jan 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[A real-world experience of using AI tools like Cursor and Claude to build a mobile application from scratch, highlighting both benefits and challenges.]]></description>
+            <title><![CDATA[Migration Legacy Assistée par IA : Retour d'expérience]]></title>
+            <link>https://davidbonan.io/fr/blog/ai-assisted-legacy-migration-lessons-learned</link>
+            <guid>https://davidbonan.io/fr/blog/ai-assisted-legacy-migration-lessons-learned</guid>
+            <pubDate>Fri, 14 Nov 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Une rétrospective de l'utilisation intensive des outils IA pour une migration d'une large codebase, des échecs initiaux à un workflow qui fonctionne réellement.]]></description>
             <author>contact@davidbonan.com (David Bonan)</author>
         </item>
         <item>
@@ -62,6 +54,14 @@
             <author>contact@davidbonan.com (David Bonan)</author>
         </item>
         <item>
+            <title><![CDATA[Optimizing React Performance: A Practical Guide]]></title>
+            <link>https://davidbonan.io/en/blog/optimizing-react-performance-practical-guide</link>
+            <guid>https://davidbonan.io/en/blog/optimizing-react-performance-practical-guide</guid>
+            <pubDate>Mon, 24 Mar 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Learn practical techniques to identify and fix performance bottlenecks in your React applications.]]></description>
+            <author>contact@davidbonan.com (David Bonan)</author>
+        </item>
+        <item>
             <title><![CDATA[Leveraging TypeScript Advanced Types: Practical Uses Beyond Basics]]></title>
             <link>https://davidbonan.io/en/blog/leveraging-typescript-advanced-types-practical-uses</link>
             <guid>https://davidbonan.io/en/blog/leveraging-typescript-advanced-types-practical-uses</guid>
@@ -70,19 +70,19 @@
             <author>contact@davidbonan.com (David Bonan)</author>
         </item>
         <item>
-            <title><![CDATA[Mastering JavaScript Data Structures: Beyond Arrays]]></title>
-            <link>https://davidbonan.io/en/blog/mastering-javascript-data-structures-beyond-arrays</link>
-            <guid>https://davidbonan.io/en/blog/mastering-javascript-data-structures-beyond-arrays</guid>
-            <pubDate>Fri, 15 Nov 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[Learn how choosing the right data structure in JavaScript can significantly improve your code performance and readability.]]></description>
+            <title><![CDATA[Building a Mobile App with AI: A Journey from Concept to App Store]]></title>
+            <link>https://davidbonan.io/en/blog/building-mobile-app-with-ai-a-journey</link>
+            <guid>https://davidbonan.io/en/blog/building-mobile-app-with-ai-a-journey</guid>
+            <pubDate>Fri, 31 Jan 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[A real-world experience of using AI tools like Cursor and Claude to build a mobile application from scratch, highlighting both benefits and challenges.]]></description>
             <author>contact@davidbonan.com (David Bonan)</author>
         </item>
         <item>
-            <title><![CDATA[Optimizing React Performance: A Practical Guide]]></title>
-            <link>https://davidbonan.io/en/blog/optimizing-react-performance-practical-guide</link>
-            <guid>https://davidbonan.io/en/blog/optimizing-react-performance-practical-guide</guid>
-            <pubDate>Mon, 24 Mar 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[Learn practical techniques to identify and fix performance bottlenecks in your React applications.]]></description>
+            <title><![CDATA[Boosting Performance with Web Workers]]></title>
+            <link>https://davidbonan.io/en/blog/boosting-performance-with-web-workers</link>
+            <guid>https://davidbonan.io/en/blog/boosting-performance-with-web-workers</guid>
+            <pubDate>Mon, 25 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Learn how to leverage Web Workers to run CPU-intensive tasks without blocking the main thread in JavaScript applications.]]></description>
             <author>contact@davidbonan.com (David Bonan)</author>
         </item>
         <item>
@@ -94,19 +94,19 @@
             <author>contact@davidbonan.com (David Bonan)</author>
         </item>
         <item>
+            <title><![CDATA[Mastering JavaScript Data Structures: Beyond Arrays]]></title>
+            <link>https://davidbonan.io/en/blog/mastering-javascript-data-structures-beyond-arrays</link>
+            <guid>https://davidbonan.io/en/blog/mastering-javascript-data-structures-beyond-arrays</guid>
+            <pubDate>Fri, 15 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Learn how choosing the right data structure in JavaScript can significantly improve your code performance and readability.]]></description>
+            <author>contact@davidbonan.com (David Bonan)</author>
+        </item>
+        <item>
             <title><![CDATA[Why Unit Tests Can Harm Your Codebase and Prevent Refactoring]]></title>
             <link>https://davidbonan.io/en/blog/why-unit-tests-can-harm-your-codebase</link>
             <guid>https://davidbonan.io/en/blog/why-unit-tests-can-harm-your-codebase</guid>
             <pubDate>Fri, 15 Nov 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Learn why over-testing intermediate methods can lead to rigid code and how to make better decisions about what to test.]]></description>
-            <author>contact@davidbonan.com (David Bonan)</author>
-        </item>
-        <item>
-            <title><![CDATA[Migration Legacy Assistée par IA : Retour d'expérience]]></title>
-            <link>https://davidbonan.io/fr/blog/ai-assisted-legacy-migration-lessons-learned</link>
-            <guid>https://davidbonan.io/fr/blog/ai-assisted-legacy-migration-lessons-learned</guid>
-            <pubDate>Fri, 14 Nov 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[Une rétrospective de l'utilisation intensive des outils IA pour une migration d'une large codebase, des échecs initiaux à un workflow qui fonctionne réellement.]]></description>
             <author>contact@davidbonan.com (David Bonan)</author>
         </item>
     </channel>

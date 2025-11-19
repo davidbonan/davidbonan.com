@@ -18,22 +18,11 @@
             }
         },
         {
-            "id": "https://davidbonan.io/en/blog/boosting-performance-with-web-workers",
-            "url": "https://davidbonan.io/en/blog/boosting-performance-with-web-workers",
-            "title": "Boosting Performance with Web Workers",
-            "summary": "Learn how to leverage Web Workers to run CPU-intensive tasks without blocking the main thread in JavaScript applications.",
-            "date_modified": "2024-11-25T00:00:00.000Z",
-            "author": {
-                "name": "David Bonan",
-                "url": "https://davidbonan.io"
-            }
-        },
-        {
-            "id": "https://davidbonan.io/en/blog/building-mobile-app-with-ai-a-journey",
-            "url": "https://davidbonan.io/en/blog/building-mobile-app-with-ai-a-journey",
-            "title": "Building a Mobile App with AI: A Journey from Concept to App Store",
-            "summary": "A real-world experience of using AI tools like Cursor and Claude to build a mobile application from scratch, highlighting both benefits and challenges.",
-            "date_modified": "2025-01-31T00:00:00.000Z",
+            "id": "https://davidbonan.io/fr/blog/ai-assisted-legacy-migration-lessons-learned",
+            "url": "https://davidbonan.io/fr/blog/ai-assisted-legacy-migration-lessons-learned",
+            "title": "Migration Legacy Assistée par IA : Retour d'expérience",
+            "summary": "Une rétrospective de l'utilisation intensive des outils IA pour une migration d'une large codebase, des échecs initiaux à un workflow qui fonctionne réellement.",
+            "date_modified": "2025-11-14T00:00:00.000Z",
             "author": {
                 "name": "David Bonan",
                 "url": "https://davidbonan.io"
@@ -73,6 +62,17 @@
             }
         },
         {
+            "id": "https://davidbonan.io/en/blog/optimizing-react-performance-practical-guide",
+            "url": "https://davidbonan.io/en/blog/optimizing-react-performance-practical-guide",
+            "title": "Optimizing React Performance: A Practical Guide",
+            "summary": "Learn practical techniques to identify and fix performance bottlenecks in your React applications.",
+            "date_modified": "2025-03-24T00:00:00.000Z",
+            "author": {
+                "name": "David Bonan",
+                "url": "https://davidbonan.io"
+            }
+        },
+        {
             "id": "https://davidbonan.io/en/blog/leveraging-typescript-advanced-types-practical-uses",
             "url": "https://davidbonan.io/en/blog/leveraging-typescript-advanced-types-practical-uses",
             "title": "Leveraging TypeScript Advanced Types: Practical Uses Beyond Basics",
@@ -84,22 +84,22 @@
             }
         },
         {
-            "id": "https://davidbonan.io/en/blog/mastering-javascript-data-structures-beyond-arrays",
-            "url": "https://davidbonan.io/en/blog/mastering-javascript-data-structures-beyond-arrays",
-            "title": "Mastering JavaScript Data Structures: Beyond Arrays",
-            "summary": "Learn how choosing the right data structure in JavaScript can significantly improve your code performance and readability.",
-            "date_modified": "2024-11-15T00:00:00.000Z",
+            "id": "https://davidbonan.io/en/blog/building-mobile-app-with-ai-a-journey",
+            "url": "https://davidbonan.io/en/blog/building-mobile-app-with-ai-a-journey",
+            "title": "Building a Mobile App with AI: A Journey from Concept to App Store",
+            "summary": "A real-world experience of using AI tools like Cursor and Claude to build a mobile application from scratch, highlighting both benefits and challenges.",
+            "date_modified": "2025-01-31T00:00:00.000Z",
             "author": {
                 "name": "David Bonan",
                 "url": "https://davidbonan.io"
             }
         },
         {
-            "id": "https://davidbonan.io/en/blog/optimizing-react-performance-practical-guide",
-            "url": "https://davidbonan.io/en/blog/optimizing-react-performance-practical-guide",
-            "title": "Optimizing React Performance: A Practical Guide",
-            "summary": "Learn practical techniques to identify and fix performance bottlenecks in your React applications.",
-            "date_modified": "2025-03-24T00:00:00.000Z",
+            "id": "https://davidbonan.io/en/blog/boosting-performance-with-web-workers",
+            "url": "https://davidbonan.io/en/blog/boosting-performance-with-web-workers",
+            "title": "Boosting Performance with Web Workers",
+            "summary": "Learn how to leverage Web Workers to run CPU-intensive tasks without blocking the main thread in JavaScript applications.",
+            "date_modified": "2024-11-25T00:00:00.000Z",
             "author": {
                 "name": "David Bonan",
                 "url": "https://davidbonan.io"
@@ -117,10 +117,10 @@
             }
         },
         {
-            "id": "https://davidbonan.io/en/blog/why-unit-tests-can-harm-your-codebase",
-            "url": "https://davidbonan.io/en/blog/why-unit-tests-can-harm-your-codebase",
-            "title": "Why Unit Tests Can Harm Your Codebase and Prevent Refactoring",
-            "summary": "Learn why over-testing intermediate methods can lead to rigid code and how to make better decisions about what to test.",
+            "id": "https://davidbonan.io/en/blog/mastering-javascript-data-structures-beyond-arrays",
+            "url": "https://davidbonan.io/en/blog/mastering-javascript-data-structures-beyond-arrays",
+            "title": "Mastering JavaScript Data Structures: Beyond Arrays",
+            "summary": "Learn how choosing the right data structure in JavaScript can significantly improve your code performance and readability.",
             "date_modified": "2024-11-15T00:00:00.000Z",
             "author": {
                 "name": "David Bonan",
@@ -128,11 +128,11 @@
             }
         },
         {
-            "id": "https://davidbonan.io/fr/blog/ai-assisted-legacy-migration-lessons-learned",
-            "url": "https://davidbonan.io/fr/blog/ai-assisted-legacy-migration-lessons-learned",
-            "title": "Migration Legacy Assistée par IA : Retour d'expérience",
-            "summary": "Une rétrospective de l'utilisation intensive des outils IA pour une migration d'une large codebase, des échecs initiaux à un workflow qui fonctionne réellement.",
-            "date_modified": "2025-11-14T00:00:00.000Z",
+            "id": "https://davidbonan.io/en/blog/why-unit-tests-can-harm-your-codebase",
+            "url": "https://davidbonan.io/en/blog/why-unit-tests-can-harm-your-codebase",
+            "title": "Why Unit Tests Can Harm Your Codebase and Prevent Refactoring",
+            "summary": "Learn why over-testing intermediate methods can lead to rigid code and how to make better decisions about what to test.",
+            "date_modified": "2024-11-15T00:00:00.000Z",
             "author": {
                 "name": "David Bonan",
                 "url": "https://davidbonan.io"

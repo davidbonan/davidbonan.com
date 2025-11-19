@@ -25,7 +25,7 @@ export default async function generateRssFeed() {
 
   const feed = new Feed(feedOptions)
 
-  allPosts.forEach((post) => {
+  allPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).forEach((post) => {
     feed.addItem({
       title: post.title,
       id: `${site_url}/${post.language}/blog/${post.slug}`,

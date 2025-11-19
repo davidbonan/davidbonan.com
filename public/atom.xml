@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://davidbonan.io</id>
     <title>David Bonan | Blog</title>
-    <updated>2025-11-19T08:53:08.440Z</updated>
+    <updated>2025-11-19T08:59:36.379Z</updated>
     <generator>Feed for developer</generator>
     <link rel="alternate" href="https://davidbonan.io"/>
     <link rel="self" href="https://davidbonan.io/atom.xml"/>
@@ -23,23 +23,11 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Boosting Performance with Web Workers]]></title>
-        <id>https://davidbonan.io/en/blog/boosting-performance-with-web-workers</id>
-        <link href="https://davidbonan.io/en/blog/boosting-performance-with-web-workers"/>
-        <updated>2024-11-25T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Learn how to leverage Web Workers to run CPU-intensive tasks without blocking the main thread in JavaScript applications.]]></summary>
-        <author>
-            <name>David Bonan</name>
-            <email>contact@davidbonan.com</email>
-            <uri>https://davidbonan.io</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Building a Mobile App with AI: A Journey from Concept to App Store]]></title>
-        <id>https://davidbonan.io/en/blog/building-mobile-app-with-ai-a-journey</id>
-        <link href="https://davidbonan.io/en/blog/building-mobile-app-with-ai-a-journey"/>
-        <updated>2025-01-31T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[A real-world experience of using AI tools like Cursor and Claude to build a mobile application from scratch, highlighting both benefits and challenges.]]></summary>
+        <title type="html"><![CDATA[Migration Legacy Assistée par IA : Retour d'expérience]]></title>
+        <id>https://davidbonan.io/fr/blog/ai-assisted-legacy-migration-lessons-learned</id>
+        <link href="https://davidbonan.io/fr/blog/ai-assisted-legacy-migration-lessons-learned"/>
+        <updated>2025-11-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Une rétrospective de l'utilisation intensive des outils IA pour une migration d'une large codebase, des échecs initiaux à un workflow qui fonctionne réellement.]]></summary>
         <author>
             <name>David Bonan</name>
             <email>contact@davidbonan.com</email>
@@ -83,6 +71,18 @@
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Optimizing React Performance: A Practical Guide]]></title>
+        <id>https://davidbonan.io/en/blog/optimizing-react-performance-practical-guide</id>
+        <link href="https://davidbonan.io/en/blog/optimizing-react-performance-practical-guide"/>
+        <updated>2025-03-24T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Learn practical techniques to identify and fix performance bottlenecks in your React applications.]]></summary>
+        <author>
+            <name>David Bonan</name>
+            <email>contact@davidbonan.com</email>
+            <uri>https://davidbonan.io</uri>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Leveraging TypeScript Advanced Types: Practical Uses Beyond Basics]]></title>
         <id>https://davidbonan.io/en/blog/leveraging-typescript-advanced-types-practical-uses</id>
         <link href="https://davidbonan.io/en/blog/leveraging-typescript-advanced-types-practical-uses"/>
@@ -95,11 +95,11 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Mastering JavaScript Data Structures: Beyond Arrays]]></title>
-        <id>https://davidbonan.io/en/blog/mastering-javascript-data-structures-beyond-arrays</id>
-        <link href="https://davidbonan.io/en/blog/mastering-javascript-data-structures-beyond-arrays"/>
-        <updated>2024-11-15T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Learn how choosing the right data structure in JavaScript can significantly improve your code performance and readability.]]></summary>
+        <title type="html"><![CDATA[Building a Mobile App with AI: A Journey from Concept to App Store]]></title>
+        <id>https://davidbonan.io/en/blog/building-mobile-app-with-ai-a-journey</id>
+        <link href="https://davidbonan.io/en/blog/building-mobile-app-with-ai-a-journey"/>
+        <updated>2025-01-31T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A real-world experience of using AI tools like Cursor and Claude to build a mobile application from scratch, highlighting both benefits and challenges.]]></summary>
         <author>
             <name>David Bonan</name>
             <email>contact@davidbonan.com</email>
@@ -107,11 +107,11 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Optimizing React Performance: A Practical Guide]]></title>
-        <id>https://davidbonan.io/en/blog/optimizing-react-performance-practical-guide</id>
-        <link href="https://davidbonan.io/en/blog/optimizing-react-performance-practical-guide"/>
-        <updated>2025-03-24T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Learn practical techniques to identify and fix performance bottlenecks in your React applications.]]></summary>
+        <title type="html"><![CDATA[Boosting Performance with Web Workers]]></title>
+        <id>https://davidbonan.io/en/blog/boosting-performance-with-web-workers</id>
+        <link href="https://davidbonan.io/en/blog/boosting-performance-with-web-workers"/>
+        <updated>2024-11-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Learn how to leverage Web Workers to run CPU-intensive tasks without blocking the main thread in JavaScript applications.]]></summary>
         <author>
             <name>David Bonan</name>
             <email>contact@davidbonan.com</email>
@@ -131,11 +131,11 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Why Unit Tests Can Harm Your Codebase and Prevent Refactoring]]></title>
-        <id>https://davidbonan.io/en/blog/why-unit-tests-can-harm-your-codebase</id>
-        <link href="https://davidbonan.io/en/blog/why-unit-tests-can-harm-your-codebase"/>
+        <title type="html"><![CDATA[Mastering JavaScript Data Structures: Beyond Arrays]]></title>
+        <id>https://davidbonan.io/en/blog/mastering-javascript-data-structures-beyond-arrays</id>
+        <link href="https://davidbonan.io/en/blog/mastering-javascript-data-structures-beyond-arrays"/>
         <updated>2024-11-15T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Learn why over-testing intermediate methods can lead to rigid code and how to make better decisions about what to test.]]></summary>
+        <summary type="html"><![CDATA[Learn how choosing the right data structure in JavaScript can significantly improve your code performance and readability.]]></summary>
         <author>
             <name>David Bonan</name>
             <email>contact@davidbonan.com</email>
@@ -143,11 +143,11 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Migration Legacy Assistée par IA : Retour d'expérience]]></title>
-        <id>https://davidbonan.io/fr/blog/ai-assisted-legacy-migration-lessons-learned</id>
-        <link href="https://davidbonan.io/fr/blog/ai-assisted-legacy-migration-lessons-learned"/>
-        <updated>2025-11-14T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Une rétrospective de l'utilisation intensive des outils IA pour une migration d'une large codebase, des échecs initiaux à un workflow qui fonctionne réellement.]]></summary>
+        <title type="html"><![CDATA[Why Unit Tests Can Harm Your Codebase and Prevent Refactoring]]></title>
+        <id>https://davidbonan.io/en/blog/why-unit-tests-can-harm-your-codebase</id>
+        <link href="https://davidbonan.io/en/blog/why-unit-tests-can-harm-your-codebase"/>
+        <updated>2024-11-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Learn why over-testing intermediate methods can lead to rigid code and how to make better decisions about what to test.]]></summary>
         <author>
             <name>David Bonan</name>
             <email>contact@davidbonan.com</email>
