@@ -13,11 +13,9 @@ alternates:
 
 "Ça va être incroyable", ai-je pensé en regardant Claude Code analyser des milliers de lignes de code legacy. "Je vais juste lui donner le endpoint legacy à analyser, et l'IA va tout migrer. Cette migration qui prendrait des mois ? Terminée en quelques semaines."
 
-Quatre heures plus tard, je fixais un écran rempli d'hallucinations qui référençait avec assurance des fonctions qui n'existaient pas, implémentait des patterns que nous n'avions jamais utilisés, et qui aurait cassé la production de manière spectaculaire.
+Quatre heures plus tard, je fixais un écran rempli d'hallucinations qui référençait avec assurance des fonctions qui n'existaient pas, implémentait des patterns que nous n'avions jamais utilisés, et qui aurait cassé la production de manière spectaculaire. C'était le Jour 1, et mes illusions venaient de se fracasser contre la réalité.
 
-C'était le Jour 1.
-
-Bienvenue dans mon voyage de sept semaines pour découvrir comment utiliser l'IA pour une migration d'une large codebase legacy, pas la version formateur youtube, mais la réalité désordonnée, frustrante et finalement productive.
+Bienvenue dans mon voyage de sept semaines pour découvrir comment utiliser l'IA pour une migration d'une large codebase legacy. Pas la version formateur YouTube promettant des miracles, mais la réalité désordonnée, frustrante et finalement productive de cette transformation.
 
 ## Le Défi : Bienvenue dans le Monde Réel
 
@@ -40,15 +38,9 @@ Ma stratégie était simple : créer un prompt parfait contenant tout. La spéci
 
 J'ai appuyé sur Entrée et regardé Claude Code réfléchir. Et réfléchir. Et réfléchir encore.
 
-Dix minutes plus tard, il a livré un plan de migration complet avec des étapes d'implémentation détaillées. Un formatage magnifique. Des explications confiantes. Des hallucinations complètes.
+Dix minutes plus tard, il a livré un plan de migration complet avec des étapes d'implémentation détaillées, un formatage magnifique et des explications confiantes. Le problème ? C'était une hallucination complète.
 
-L'IA avait inventé une couche de cache que nous n'avions pas. Référencé un pattern de gestion d'état que nous n'avions jamais utilisé. Proposé de migrer les appels base de données vers un ORM que nous n'utilisions pas. C'était impressionnant de faux.
-
-**Heures perdues** : Trop nombreuses pour l'admettre.
-
-**Prêt pour la production** : Négatif.
-
-L'IA n'analysait pas notre code - elle faisait du pattern-matching avec ses données d'entraînement et espérait pour le mieux.
+L'IA avait inventé une couche de cache que nous n'avions pas, référencé un pattern de gestion d'état que nous n'avions jamais utilisé, et proposé de migrer les appels base de données vers un ORM que nous n'utilisions pas. C'était impressionnant de faux, et j'ai perdu trop d'heures à essayer de comprendre pourquoi rien ne correspondait à notre codebase réelle. L'IA n'analysait pas notre code - elle faisait du pattern-matching avec ses données d'entraînement et espérait pour le mieux.
 
 ### 19 Septembre : Briser le Fantasme
 
@@ -88,10 +80,10 @@ La différence n'était pas l'IA. La différence c'était moi faisant mon travai
 
 **Quatre règles durement acquises ont émergé :**
 
-1. **L'ambiguïté tue** - Chaque prompt vague produisait des hallucinations. Chaque prompt spécifique produisait du code utilisable.
-2. **On ne peut pas sauter la compréhension** - L'IA amplifie votre compréhension ; elle ne la remplace pas.
-3. **L'IA génère du bruit** - Les specs nécessitaient un filtrage manuel. L'IA inclurait chaque détail tangentiellement lié.
-4. **La validation n'est pas négociable** - Revue humaine de chaque spec, chaque plan, chaque supposition.
+1. **L'ambiguïté tue la précision** - Chaque prompt vague produisait des hallucinations, tandis que chaque prompt spécifique produisait du code utilisable.
+2. **On ne peut pas sauter la phase de compréhension** - L'IA amplifie votre compréhension du code ; elle ne peut pas la remplacer.
+3. **L'IA génère du bruit qu'il faut filtrer** - Les specs nécessitaient un filtrage manuel car l'IA inclurait chaque détail tangentiellement lié, noyant l'essentiel dans l'accessoire.
+4. **La validation reste non négociable** - Une revue humaine minutieuse de chaque spec, chaque plan, chaque supposition était indispensable.
 
 Le nouveau workflow : **Analyse IA → Analyse humaine → Prompt détaillé → Génération IA → Validation humaine**
 
@@ -99,9 +91,7 @@ Pensez pair programming, où vous êtes le dev senior et l'IA est le junior tale
 
 ### L'Erreur Auto-Accept
 
-Oh, et j'ai désactivé l'auto-accept pour les modifications IA.
-
-Regarder l'IA modifier automatiquement des fichiers pendant que je prenais un café ? Ce n'est pas de la productivité. C'est jouer avec le code de production.
+J'ai aussi tiré une leçon importante : il fallait désactiver l'auto-accept pour les modifications IA. Regarder l'IA modifier automatiquement des fichiers pendant que je prenais un café pouvait sembler productif, mais en réalité c'était simplement jouer avec le code de production de manière risquée.
 
 ## Semaine 3 : La Facture Arrive
 
@@ -140,15 +130,9 @@ Puis j'ai eu une idée : et si je faisais analyser le code legacy par plusieurs 
 - Cursor analyse le flux d'authentification
 - Claude fusionne les trois perspectives en vérifiant le legacy et en validant les découvertes
 
-Claude a remarqué les patterns de gestion d'erreur. Codex a attrapé les cas limites. Cursor a identifié les considérations de performance. Aucun d'eux n'a tout eu, mais ensemble ? Couverture complète.
+Claude a remarqué les patterns de gestion d'erreur, Codex a attrapé les cas limites, et Cursor a identifié les considérations de performance. Aucun d'eux n'a tout capturé seul, mais ensemble ils offraient une couverture complète. C'était comme avoir trois devs juniors faire une revue de code - chacun attrape des problèmes différents.
 
-C'était comme avoir trois devs juniors faire une revue de code - chacun attrape des problèmes différents.
-
-**Coût en temps** : Plus élevé au départ.
-
-**Amélioration de la qualité** : Dramatique.
-
-**Hallucinations** : Les erreurs de chaque modèle étaient attrapées par les autres.
+L'approche multi-modèle demandait certes plus de temps au départ, mais l'amélioration de la qualité était dramatique. Les erreurs de chaque modèle étaient systématiquement attrapées par les autres, créant un système de validation croisée particulièrement efficace.
 
 ### 13 Octobre : Le Fond du Gouffre
 
@@ -162,13 +146,9 @@ Les résultats étaient... éducatifs.
 - Des variables avec des noms suggérant un but mais des types impliquant autre chose
 - Une couche d'abstraction tellement over-engineered qu'elle nécessitait des abstractions pour les abstractions
 
-**Le pire ?** Le code compilait. Les tests passaient. Ça avait l'air professionnel.
+**Le pire ?** Le code compilait, les tests passaient, et ça avait l'air professionnel. Mais c'était faux de manière subtile et insidieuse - le genre de faux qui glisse en production et cause des bugs un mois plus tard quand quelqu'un essaie de l'étendre.
 
-Mais c'était faux de manière subtile et insidieuse. Le genre de faux qui glisse en production et cause des bugs un mois plus tard quand quelqu'un essaie de l'étendre.
-
-J'ai passé plus de temps à corriger du code IA "fonctionnel" que j'en aurais passé à l'écrire correctement from scratch.
-
-C'était mon moment le plus bas. **"Est-ce que ça fait vraiment gagner du temps ? Ou est-ce que je crée juste de la dette technique à la vitesse de l'IA ?"**
+J'ai passé plus de temps à corriger du code IA "fonctionnel" que j'en aurais passé à l'écrire correctement from scratch. C'était mon moment le plus bas, celui où je me suis demandé si tout cela faisait vraiment gagner du temps ou si je créais simplement de la dette technique à la vitesse de l'IA.
 
 ### 17 Octobre : L'Apocalypse Code Review
 
@@ -220,25 +200,15 @@ Mon cerveau est immédiatement allé vers : "Et si j'orchestrais plusieurs agent
 - `/specification-plan` → synthétisent les découvertes en une spec cohérente
 - `/build-prd` → génèrent un plan d'implémentation détaillé
 
-**Premier test :**
-
-- Temps d'analyse : 3x plus long que le prompt manuel
-- Qualité : Nettement meilleure
-- Complétude du PRD : Réellement complète
-
-Je tenais quelque chose.
+**Premier test :** L'analyse prenait trois fois plus de temps qu'avec un prompt manuel, mais la qualité était nettement meilleure et la complétude du PRD était enfin réellement satisfaisante. Je tenais quelque chose.
 
 ### 24 Octobre : Quand la Magie Cesse de Fonctionner
 
-**Le problème :** L'orchestrateur était fragile. Ça marchait quand tout allait bien. Quand quelque chose tournait mal - non respect des consignes de l'IA, limite de tokens, prompt ambigu - ça s'effondrait.
+**Le problème :** L'orchestrateur était fragile. Ça marchait bien quand tout se passait comme prévu, mais dès que quelque chose tournait mal - non respect des consignes de l'IA, limite de tokens, ou prompt ambigu - tout s'effondrait.
 
-Prompts complexes vers Codex via les outils CLI ? Peu fiable.
-Coordination multi-agents multi-étapes ? Ca marche 1 fois sur 3.
-Dépendre de Claude Code pour gérer l'orchestration ? Pas possible.
+Les prompts complexes vers Codex via les outils CLI étaient peu fiables. La coordination multi-agents multi-étapes ne fonctionnait qu'une fois sur trois. Dépendre de Claude Code pour gérer l'orchestration s'est révélé impossible.
 
-Le rêve de l'automation "set it and forget it" est mort ce jour-là.
-
-J'avais besoin de quelque chose de plus stable. Quelque chose que je contrôlais. Quelque chose qui ne déciderait pas aléatoirement d'interpréter mes instructions de manière créative.
+Le rêve de l'automation "set it and forget it" est mort ce jour-là. J'avais besoin de quelque chose de plus stable, quelque chose que je contrôlais vraiment, et qui ne déciderait pas aléatoirement d'interpréter mes instructions de manière créative.
 
 ---
 
@@ -246,9 +216,7 @@ J'avais besoin de quelque chose de plus stable. Quelque chose que je contrôlais
 
 ### 2 Novembre : Construire Mon Propre Outil
 
-Ça suffit. Plus de dépendance aux caprices de l'IA pour l'orchestration. Il est temps de construire quelque chose de fiable.
-
-Le temps d'une soirée, j'ai construit une CLI qui orchestre tout le workflow d'analyse. Pas intelligent. Pas fancy. Juste fiable.
+J'en avais assez de dépendre des caprices de l'IA pour l'orchestration. Il était temps de construire quelque chose de véritablement fiable. Le temps d'une soirée, j'ai construit une CLI qui orchestre tout le workflow d'analyse. Rien d'intelligent ou de fancy, juste quelque chose de fiable et prévisible.
 
 **Le flux :**
 
@@ -274,26 +242,18 @@ $ migration-cli analyze
 Terminé.
 ```
 
-**Premier run** : 15 minutes d'analyse, PRD complet, zéro hallucinations qui se sont glissées.
-
-**Deuxième run** : Même qualité.
-
-**Dixième run** : Toujours cohérent.
-
-Enfin. De la répétabilité.
+Le premier run a pris 15 minutes d'analyse et a produit un PRD complet sans aucune hallucination. Le deuxième run a maintenu la même qualité. Au dixième run, la cohérence était toujours au rendez-vous. J'avais enfin atteint la répétabilité tant recherchée.
 
 ### 3 Novembre : La Révélation de la Fenêtre de Contexte
 
-**La qualité de l'IA s'effondre après ~60% d'utilisation de la fenêtre de contexte.**
-
-Ce n'est pas graduel. C'est une falaise. À 50% ? Bien. À 60% ? Hallucinations.
+J'ai découvert que la qualité de l'IA s'effondre après environ 60% d'utilisation de la fenêtre de contexte. Ce n'est pas une dégradation progressive mais une véritable falaise : à 50% tout fonctionne bien, à 60% les hallucinations commencent à apparaître.
 
 **La solution :**
 
 - Stocké le contexte pertinent de la tâche en cours dans un fichier `.work-in-progress.md`
 - Supprimé les serveurs MCP trop gourmands en contexte (je te regarde, Atlassian mangeant 18% de contexte juste en existant)
 
-**Le résultat :** Les migrations pouvaient tourner aussi longtemps que nécessaire sans dégradation de qualité.
+Avec cette approche, les migrations pouvaient tourner aussi longtemps que nécessaire sans aucune dégradation de qualité.
 
 ### 4 Novembre : Après l'Analyse, Le Code
 
@@ -349,9 +309,7 @@ Ne pas faire confiance aveuglément. Passer du temps à review :
 
 Corriger ce qui est faux. Approuver ce qui est juste. Copier vers la nouvelle codebase.
 
-**Coût en temps** : 45 minutes.
-
-**Valeur** : Évite des semaines de mauvaises suppositions.
+Cette phase de validation, qui prend environ 45 minutes, permet d'éviter des semaines de mauvaises suppositions et de fausses pistes qui auraient pu compromettre tout le projet.
 
 ### Phase 2 : Implémentation (La Partie Qu'On Ne Peut Pas Précipiter)
 
@@ -374,9 +332,7 @@ Puis review chaque supposition et orienter l'IA dès le moindre écart.
 
 C'est critique. Ne laissez pas l'IA concevoir votre architecture.
 
-L'IA créera quelque chose qui marche en isolation mais ne s'intègre pas à votre système. Elle ajoutera des abstractions dont vous n'avez pas besoin. Elle fera des choix qui semblent bien maintenant mais font mal plus tard.
-
-**30 minutes d'architecture manuelle économise 3 heures de refactoring.**
+L'IA créera quelque chose qui marche en isolation mais ne s'intègre pas à votre système. Elle ajoutera des abstractions dont vous n'avez pas besoin. Elle fera des choix qui semblent bien maintenant mais font mal plus tard. Cette approche s'est avérée extrêmement rentable : 30 minutes de travail d'architecture manuelle économisaient systématiquement 3 heures de refactoring ultérieur.
 
 **4. Laisser l'IA implémenter les détails** avec `02_code.md`
 
@@ -471,33 +427,13 @@ La réponse n'est pas simple. Voici la vraie répartition :
 | **Corrections manuelles**          | Significativement réduit mais toujours nécessaire |
 | **Développement d'outils (CLI)**   | Coût initial, gains de productivité continus      |
 
-**La vérité brutale ?**
-
-Semaine 1 : L'IA était plus lente que le travail manuel.
-
-Semaine 2 : L'IA était aussi rapide que le travail manuel.
-
-Semaine 4 : L'IA va 4x plus vite que le travail manuel.
+**La vérité brutale ?** La courbe d'apprentissage était réelle. Durant la première semaine, l'IA était plus lente que le travail manuel à cause du temps passé à corriger ses erreurs. À la deuxième semaine, on atteignait la parité avec le travail manuel. Mais à la quatrième semaine, avec un workflow rodé, l'IA permettait d'aller 4x plus vite que le travail manuel.
 
 **Est-ce que ça en vaut la peine ?**
 
-Pour ce type de migration complexe : **Oui.**
+Pour ce type de migration complexe, la réponse est clairement oui. L'IA apporte des bénéfices concrets : elle lit et explore des milliers de lignes de code pendant que je prends un café, ce qui est véritablement précieux. Écrire le 15ème endpoint CRUD moi-même serait écrasant pour l'âme, tandis que l'IA le fait en secondes. L'analyse multi-modèle, qui équivaudrait à employer trois devs juniors, tourne simplement sur mon laptop. Enfin, l'IA génère des listes de tâches détaillées et standardisées qui me prendraient des heures à produire manuellement.
 
-**Exploration plus rapide du codebase** - L'IA lit des milliers de lignes pendant que je prends un café. C'est véritablement précieux.
-
-**Boilerplate réduit** - Écrire le 15ème endpoint CRUD moi-même serait écrasant pour l'âme. L'IA le fait en secondes.
-
-**Analyse multi-modèle** - Trois modèles IA analysant en parallèle coûteraient trois devs juniors. Je le fais tourner sur mon laptop.
-
-**Découpage standardisé** - L'IA génère des listes de tâches détaillées qui me prendraient des heures.
-
-Mais voici ce que la foule "l'IA va 10x votre productivité" ne vous dira pas :
-
-**Vous reviewez toujours tout.** Chaque ligne. Chaque fichier. Chaque décision architecturale.
-
-**Vous écrivez toujours l'architecture.** L'IA ne peut pas concevoir votre système. Seulement l'implémenter.
-
-**Vous déboguez toujours les trucs bizarres.** Les bugs générés par IA sont souvent plus subtils que les bugs que vous écririez vous-même.
+Mais voici ce que la foule "l'IA va 10x votre productivité" ne vous dira pas : vous devez toujours reviewer chaque ligne, chaque fichier, chaque décision architecturale. Vous devez toujours concevoir l'architecture vous-même - l'IA ne peut que l'implémenter. Et vous devez toujours déboguer les problèmes bizarres, sachant que les bugs générés par IA sont souvent plus subtils et insidieux que ceux que vous écririez vous-même.
 
 Le gain de productivité est réel. Mais c'est plutôt 2.5-4x pour les développeurs prudents, pas 10x.
 
@@ -529,11 +465,7 @@ Oui, ça coûte plus cher. Ça attrape aussi les hallucinations avant qu'elles a
 
 **4. L'auto-accept est un piège**
 
-Regarder l'IA commiter des changements pendant que vous prenez un café semble productif.
-
-Ça ne l'est pas. C'est jouer avec votre codebase.
-
-Reviewez. Chaque. Changement.
+Regarder l'IA commiter des changements automatiquement pendant que vous prenez un café peut sembler productif, mais c'est une illusion dangereuse. En réalité, c'est jouer avec votre codebase et prendre des risques inutiles. Il faut reviewer chaque changement, sans exception.
 
 **5. Vous concevez l'architecture**
 
@@ -541,9 +473,7 @@ Reviewez. Chaque. Changement.
 
 **6. Effacez le contexte comme si la qualité de votre code en dépendait**
 
-Parce que c'est le cas.
-
-Après 60% d'utilisation du contexte, la qualité de l'IA s'effondre. Recommencez fréquemment à neuf.
+Parce que c'est exactement le cas. Après 60% d'utilisation de la fenêtre de contexte, la qualité de l'IA s'effondre brutalement. Il faut recommencer fréquemment à neuf pour maintenir des résultats fiables.
 
 **7. Standardisez tout**
 
@@ -567,15 +497,7 @@ Avertissement : vous générerez du code plus vite que votre équipe ne peut le 
 
 ### Quand Sauter Toute Cette Approche
 
-Ce workflow a du sens pour les migrations complexes. C'est excessif pour :
-
-**Petits projets** - Utilisez juste Cursor et avancez vite.
-
-**Prototypes** - Qui se soucie de l'architecture ? Shippez et itérez.
-
-**Apprendre une nouvelle techno** - Comprenez par vous-même d'abord. IA plus tard.
-
-**Applications CRUD simples** - Patterns standards, pas de complexité, l'IA brille sans toute cette structure.
+Ce workflow a du sens pour les migrations complexes, mais il serait excessif pour des contextes plus simples. Pour les petits projets, utilisez simplement Cursor et avancez rapidement sans trop de structure. Pour les prototypes où l'architecture peut évoluer librement, shippez et itérez sans contraintes. Si vous apprenez une nouvelle technologie, prenez le temps de comprendre par vous-même d'abord avant d'introduire l'IA. Enfin, pour les applications CRUD simples avec des patterns standards, l'IA brille naturellement sans avoir besoin de toute cette structure.
 
 Gardez le workflow structuré pour les problèmes qui en ont vraiment besoin.
 
@@ -621,16 +543,9 @@ Le total d'heures ? 2-4x plus rapide qu'avant.
 
 La différence ? Je n'écris plus de boilerplate. Je n'implémente plus le quinzième endpoint CRUD à la main. Je ne tape plus les cas de tests répétitifs.
 
-À la place, je :
+À la place, je consacre mon temps à concevoir des systèmes, reviewer les implémentations, attraper des bugs subtils et prendre des décisions stratégiques. C'est en fait une amélioration significative par rapport à avant.
 
-- Conçois des systèmes
-- Review l'implémentation
-- Attrape des bugs subtils
-- Prends des décisions stratégiques
-
-**C'est en fait... mieux ?**
-
-Écrire du boilerplate n'a jamais été la partie fun. Concevoir des systèmes élégants ? C'est pourquoi je suis entré dans ce domaine.
+Écrire du boilerplate n'a jamais été la partie intéressante du développement. Concevoir des systèmes élégants et résoudre des problèmes complexes, en revanche, c'est exactement pourquoi je suis entré dans ce domaine.
 
 L'IA gère les parties ennuyeuses. Je gère les parties intéressantes.
 
@@ -653,11 +568,7 @@ Faites ça, et vous verrez de vrais gains de productivité 2-4x sur le travail c
 
 Sautez ces étapes, et vous passerez plus de temps à déboguer les hallucinations que vous n'en auriez passé à écrire le code manuellement.
 
-**Le futur du développement n'est pas l'IA autonome.**
-
-C'est les développeurs qui maîtrisent l'art de diriger l'IA efficacement dans des workflows bien structurés. C'est là que résident les vrais gains de productivité.
-
-Et honnêtement ? Ce futur est déjà là. Vous devez juste être prêt à faire le travail pour y arriver.
+**Le futur du développement n'est pas l'IA autonome**, mais plutôt des développeurs qui maîtrisent l'art de diriger l'IA efficacement dans des workflows bien structurés. C'est là que résident les vrais gains de productivité. Et honnêtement, ce futur est déjà là - il suffit d'être prêt à faire le travail nécessaire pour y arriver.
 
 ---
 
