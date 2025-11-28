@@ -1,10 +1,10 @@
 ---
 date: '2025-11-14'
 language: 'en'
-title: "AI-Assisted Legacy Migration: Lessons Learned"
+title: 'AI-Assisted Legacy Migration: Lessons Learned'
 category: 'Development'
 image: '/images/articles/ai-migration-journey.png'
-description: "A retrospective on heavily using AI tools for a large codebase migration, from initial failures to a workflow that actually works."
+description: 'A retrospective on heavily using AI tools for a large codebase migration, from initial failures to a workflow that actually works.'
 timeToRead: 12
 alternates:
   en: 'ai-assisted-legacy-migration-lessons-learned'
@@ -64,7 +64,7 @@ When I blindly asked the AI to analyze code:
 
 ```
 "Analyze this authentication module and create a migration plan"
-’ AI invents patterns, makes assumptions, confident but wrong
+ï¿½ AI invents patterns, makes assumptions, confident but wrong
 ```
 
 When I analyzed it first, then asked the AI:
@@ -73,7 +73,7 @@ When I analyzed it first, then asked the AI:
 "This auth module uses JWT tokens with a custom refresh strategy stored in Redis.
 The legacy implementation has three edge cases: [specific cases].
 Create a migration plan that handles these cases using our new auth service."
-’ AI generates an accurate and usable plan
+ï¿½ AI generates an accurate and usable plan
 ```
 
 The difference wasn't the AI. The difference was me doing my job first.
@@ -85,7 +85,7 @@ The difference wasn't the AI. The difference was me doing my job first.
 3. **AI generates noise that needs filtering** - Specs required manual filtering because AI would include every tangentially related detail, drowning the essential in the accessory.
 4. **Validation remains non-negotiable** - Thorough human review of every spec, every plan, every assumption was indispensable.
 
-The new workflow: **AI Analysis ’ Human Analysis ’ Detailed Prompt ’ AI Generation ’ Human Validation**
+The new workflow: **AI Analysis ï¿½ Human Analysis ï¿½ Detailed Prompt ï¿½ AI Generation ï¿½ Human Validation**
 
 Think pair programming, where you're the senior dev and the AI is the talented junior who needs clear directions.
 
@@ -196,9 +196,9 @@ My brain immediately went to: "What if I orchestrated multiple AI agents?"
 
 At 2 AM, I had a working prototype:
 
-- `/scout-explorer` ’ multiple agents analyze the codebase in parallel via Claude, Codex and Cursor
-- `/specification-plan` ’ synthesize findings into a coherent spec
-- `/build-prd` ’ generate a detailed implementation plan
+- `/scout-explorer` ï¿½ multiple agents analyze the codebase in parallel via Claude, Codex and Cursor
+- `/specification-plan` ï¿½ synthesize findings into a coherent spec
+- `/build-prd` ï¿½ generate a detailed implementation plan
 
 **First test:** Analysis took three times longer than a manual prompt, but quality was significantly better and PRD completeness was finally truly satisfactory. I had something.
 
@@ -223,21 +223,21 @@ I was tired of depending on AI's whims for orchestration. Time to build somethin
 ```
 $ migration-cli analyze
 
-’ "Which repositories?"  [interactive prompt]
-’ "Which AI models?"    [Claude Sonnet, Claude Haiku, Codex GPT5, Cursor Composer1 - multiple choice]
-’ "Task description?" [specific, not vague]
-’ "Entry points?"     [where to start the analysis]
-’ "Scope?"              [what's included, what's not]
+ï¿½ "Which repositories?"  [interactive prompt]
+ï¿½ "Which AI models?"    [Claude Sonnet, Claude Haiku, Codex GPT5, Cursor Composer1 - multiple choice]
+ï¿½ "Task description?" [specific, not vague]
+ï¿½ "Entry points?"     [where to start the analysis]
+ï¿½ "Scope?"              [what's included, what's not]
 
 [CLI runs in the background]
-’ Clones relevant legacy repos
-’ Launches chosen models in parallel
-’ Each analyzes independently
-’ Merges results into coherent analysis
-’ Generates PRD
-’ Breaks down into atomic tasks
-’ Parallel review of each task
-’ Generates test suite
+ï¿½ Clones relevant legacy repos
+ï¿½ Launches chosen models in parallel
+ï¿½ Each analyzes independently
+ï¿½ Merges results into coherent analysis
+ï¿½ Generates PRD
+ï¿½ Breaks down into atomic tasks
+ï¿½ Parallel review of each task
+ï¿½ Generates test suite
 
 Done.
 ```
@@ -419,13 +419,13 @@ Everyone wants to know: "Does AI actually save time?"
 
 The answer isn't simple. Here's the real breakdown:
 
-| Phase                              | Time Investment                                   |
-| ---------------------------------- | ------------------------------------------------- |
-| **Initial "Full AI" attempts**     | Days of wasted effort                             |
-| **Workflow refinement**            | ~7 weeks of experimentation                       |
-| **Current workflow per feature**   | 25 min planning + 2-3 hours implementation        |
-| **Manual corrections**             | Significantly reduced but still necessary         |
-| **Tooling development (CLI)**      | Initial cost, ongoing productivity gains          |
+| Phase                            | Time Investment                            |
+| -------------------------------- | ------------------------------------------ |
+| **Initial "Full AI" attempts**   | Days of wasted effort                      |
+| **Workflow refinement**          | ~7 weeks of experimentation                |
+| **Current workflow per feature** | 25 min planning + 2-3 hours implementation |
+| **Manual corrections**           | Significantly reduced but still necessary  |
+| **Tooling development (CLI)**    | Initial cost, ongoing productivity gains   |
 
 **The brutal truth?** The learning curve was real. During the first week, AI was slower than manual work because of time spent fixing its errors. By the second week, we reached parity with manual work. But by the fourth week, with a polished workflow, AI enabled going 4x faster than manual work.
 
@@ -500,34 +500,6 @@ This creates a new bottleneck. Solutions that worked for us:
 This workflow makes sense for complex migrations, but would be overkill for simpler contexts. For small projects, just use Cursor and move fast without too much structure. For prototypes where architecture can evolve freely, ship and iterate without constraints. If you're learning a new technology, take time to understand for yourself first before introducing AI. Finally, for simple CRUD applications with standard patterns, AI naturally shines without needing all this structure.
 
 Keep the structured workflow for problems that truly need it.
-
-## What's Next: The Evolving Landscape
-
-Seven weeks isn't long in technology years. Tools are already improving:
-
-**Cursor** is improving significantly with each release. What struggled in September works seamlessly in November.
-
-**Claude Code** continues to extend context windows and improve orchestration. The limits I hit today might be gone next month.
-
-**Custom tooling** is getting more sophisticated. The CLI I built in a weekend now has features I didn't know I needed.
-
-**Composer1 and Gemini3** came out in the meantime and are very promising.
-
-Here's the thing: **the best approach isn't to choose one tool.**
-
-It's to build a workflow that leverages each tool's strengths:
-
-- **Cursor** for rapid implementation when you know exactly what you want
-- **Claude** for analysis and planning when you need to understand something complex
-- **Codex** for pattern discovery when you're exploring unknown code
-- **Custom CLI** for orchestration when you need reliability over flexibility
-
-Tools will keep improving. The workflow principles won't change:
-
-- Understand before generating
-- Review before accepting
-- Design before implementing
-- Structure beats ad-hoc prompting
 
 ## The Conclusion
 
