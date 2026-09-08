@@ -28,6 +28,7 @@ export async function GET() {
     { path: '', priority: '1.0', changefreq: 'weekly' },
     { path: '/blog', priority: '0.9', changefreq: 'daily' },
     { path: '/work', priority: '0.9', changefreq: 'weekly' },
+    { path: '/visite', priority: '0.8', changefreq: 'monthly' },
   ]
 
   staticPages.forEach((page) => {
