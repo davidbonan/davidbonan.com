@@ -78,9 +78,9 @@ const float ASSISE = 4.0;
 // (Bartenura sur Yoma 4:3), et on les compte en sortant du Heikhal — Yoma 4:3 pose le
 // ממרס sur le quatrième rovad de l'Azara. Largeur « ורובד ארבע » (Middot 3:6). Mêmes
 // valeurs que ROVAD_DALLE, JOINT_DALLE et CREUX_DALLE du blockout.
-const float ROVAD_DALLE = 4.0;
-const float JOINT_DALLE = 0.05;
-const float CREUX_DALLE = 0.015 * AMA;
+const float ROVAD_DALLE = 4.0;   // largeur d'une rangée, en amot
+const float JOINT_DALLE = 0.05;  // le lit entre deux dalles, en amot
+const float CREUX_DALLE = 0.015 * AMA;   // 7 mm : un lit de dalle, pas une rainure
 // Ce que devient la pierre au fond du joint : plus sombre et PLUS CHAUDE. Multiplier
 // vers le noir suffisait à creuser, mais un calcaire assombri sans teinte vire au gris
 // et le mur se retrouvait quadrillé de traits grisâtres. Un joint est de la pierre à
